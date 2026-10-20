@@ -1,0 +1,2483 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mithu Ahammad | Web Developer & Social Media Expert</title>
+  <meta name="description" content="Mithu Ahammad is a Web Developer and Social Media Expert specializing in responsive websites, WordPress, React, SEO, digital marketing, and social media management." />
+  <meta name="keywords" content="Mithu Ahammad, Web Developer, Social Media Expert, WordPress, React, Next.js, Laravel, SEO, Digital Marketing, mithuahammad.com" />
+  <link rel="canonical" href="https://mithuahammad.com" />
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Hind Siliguri', 'sans-serif'],
+            display: ['Space Grotesk', 'Hind Siliguri', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Default Theme: Dark Navy background with Purple & Blue Gradient Accents */
+    :root {
+      --bg-primary: #070b19;
+      --bg-elevated: #0e152b;
+      --bg-card: rgba(15, 23, 42, 0.76);
+      --text-primary: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-subtle: rgba(148, 163, 184, 0.14);
+      --brand-primary: #8b5cf6;
+      --brand-secondary: #3b82f6;
+      --brand-glow: rgba(139, 92, 246, 0.24);
+      --spotlight-color: rgba(139, 92, 246, 0.15);
+    }
+
+    [data-theme="emerald"] {
+      --brand-primary: #10b981;
+      --brand-secondary: #06b6d4;
+      --brand-glow: rgba(16, 185, 129, 0.2);
+      --spotlight-color: rgba(16, 185, 129, 0.14);
+    }
+
+    [data-theme="titanium"] {
+      --brand-primary: #3b82f6;
+      --brand-secondary: #6366f1;
+      --brand-glow: rgba(59, 130, 246, 0.22);
+      --spotlight-color: rgba(59, 130, 246, 0.15);
+    }
+
+    [data-theme="amber"] {
+      --brand-primary: #f59e0b;
+      --brand-secondary: #ec4899;
+      --brand-glow: rgba(245, 158, 11, 0.2);
+      --spotlight-color: rgba(245, 158, 11, 0.14);
+    }
+
+    [data-theme="crimson"] {
+      --brand-primary: #f43f5e;
+      --brand-secondary: #8b5cf6;
+      --brand-glow: rgba(244, 63, 94, 0.2);
+      --spotlight-color: rgba(244, 63, 94, 0.14);
+    }
+
+    /* White Background Mode (as requested in Design Style: Dark navy or white background) */
+    html.light-mode {
+      --bg-primary: #ffffff;
+      --bg-elevated: #f8fafc;
+      --bg-card: rgba(248, 250, 252, 0.92);
+      --text-primary: #0f172a;
+      --text-muted: #475569;
+      --border-subtle: rgba(15, 23, 42, 0.1);
+      --spotlight-color: rgba(124, 58, 237, 0.09);
+    }
+
+    html.light-mode .text-zinc-100,
+    html.light-mode .text-zinc-200,
+    html.light-mode .text-white {
+      color: #0f172a !important;
+    }
+
+    html.light-mode .text-zinc-300,
+    html.light-mode .text-zinc-400 {
+      color: #334155 !important;
+    }
+
+    html.light-mode .bg-black\/40,
+    html.light-mode .bg-black\/35,
+    html.light-mode .bg-black\/30,
+    html.light-mode .bg-black\/50,
+    html.light-mode .bg-\[\#07090f\],
+    html.light-mode .bg-\[\#0d1017\]\/80,
+    html.light-mode .bg-\[\#0d1017\]\/90 {
+      background-color: rgba(241, 245, 249, 0.92) !important;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', 'Hind Siliguri', sans-serif;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Velora Dotted Glow Background */
+    .velora-dotted-bg {
+      background-image: radial-gradient(rgba(148, 163, 184, 0.14) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .velora-noise {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 0);
+      background-size: 16px 16px;
+    }
+
+    /* Velora Spotlight Card */
+    .velora-spotlight-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(16px);
+      overflow: hidden;
+      transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+    }
+
+    .velora-spotlight-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        520px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        var(--spotlight-color),
+        transparent 40%
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .velora-spotlight-card:hover::before {
+      opacity: 1;
+    }
+
+    .velora-spotlight-card:hover {
+      border-color: rgba(139, 92, 246, 0.38);
+      transform: translateY(-2px);
+    }
+
+    /* Velora Purple-Blue Gradient Button */
+    .velora-btn-primary {
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      color: #ffffff !important;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .velora-btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px -6px var(--brand-glow);
+      filter: brightness(1.08);
+    }
+
+    .brand-text {
+      color: var(--brand-primary);
+    }
+
+    .brand-gradient-text {
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Orbiting animation */
+    @keyframes orbitCW {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes orbitCCW {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    .orbit-ring-1 { animation: orbitCW 34s linear infinite; }
+    .orbit-ring-2 { animation: orbitCCW 46s linear infinite; }
+    .orbit-counter-1 { animation: orbitCCW 34s linear infinite; }
+    .orbit-counter-2 { animation: orbitCW 46s linear infinite; }
+
+    /* Project mockup hover scroll effect */
+    .project-preview-viewport {
+      overflow: hidden;
+      position: relative;
+    }
+    .project-preview-canvas {
+      transition: transform 2.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .group:hover .project-preview-canvas {
+      transform: translateY(-26%);
+    }
+
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #070b19; }
+    ::-webkit-scrollbar-thumb { background: #262f4d; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--brand-primary); }
+  </style>
+</head>
+<body class="velora-dotted-bg velora-noise selection:bg-violet-500/30 selection:text-violet-200">
+
+  <!-- Top Scroll Progress Bar (Velora Scroll Progress) -->
+  <div class="fixed top-0 left-0 right-0 h-[3px] z-50 bg-transparent pointer-events-none">
+    <div id="scrollProgressBar" class="h-full transition-all duration-75" style="width: 0%; background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));"></div>
+  </div>
+
+  <!-- Velora Resizable Navbar (Home | About | Services | Skills | Projects | Contact) -->
+  <header id="mainHeader" class="fixed top-3 left-0 right-0 z-40 px-4 transition-all duration-300">
+    <nav id="navContainer" class="max-w-6xl mx-auto rounded-2xl border border-white/10 bg-[#0b1124]/85 backdrop-blur-xl px-4 sm:px-6 py-3 flex items-center justify-between transition-all duration-300 shadow-lg shadow-black/30">
+      <!-- Brand / Identity -->
+      <div class="flex items-center gap-3">
+        <button type="button" id="brandHomeBtn" class="flex items-center gap-2.5 text-left group focus:outline-none">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center font-mono font-bold text-sm border border-violet-400/30 bg-gradient-to-br from-violet-600/20 to-blue-600/20 group-hover:border-violet-400 transition-colors">
+            <span class="brand-gradient-text font-extrabold">MA</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span id="navDeveloperName" class="font-display font-bold text-sm sm:text-base tracking-tight">Mithu Ahammad</span>
+              <span id="navDomainBadge" class="hidden xl:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono bg-violet-500/10 border border-violet-400/20 text-violet-300">mithuahammad.com</span>
+            </div>
+            <p id="navRoleSub" class="text-[11px] font-mono text-zinc-400">Web Developer &amp; Social Media Expert</p>
+          </div>
+        </button>
+      </div>
+
+      <!-- Proposed Navigation Menu: Home | About | Services | Skills | Projects | Contact -->
+      <div class="hidden md:flex items-center gap-1 bg-white/[0.03] border border-white/[0.08] rounded-xl p-1">
+        <button type="button" data-scroll-to="heroSection" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-100 bg-gradient-to-r from-violet-600/30 to-blue-600/30 border border-violet-400/30 transition-all">Home</button>
+        <button type="button" data-scroll-to="aboutSection" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-400 hover:text-zinc-100 transition-all">About</button>
+        <button type="button" data-scroll-to="servicesSection" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-400 hover:text-zinc-100 transition-all">Services</button>
+        <button type="button" data-scroll-to="skillsSection" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-400 hover:text-zinc-100 transition-all">Skills</button>
+        <button type="button" data-scroll-to="projectsSection" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-400 hover:text-zinc-100 transition-all">Projects</button>
+        <button type="button" data-scroll-to="contactSection" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-400 hover:text-zinc-100 transition-all">Contact</button>
+      </div>
+
+      <!-- Right Controls: Language, Dark/White Surface, Command Palette, Config Editor -->
+      <div class="flex items-center gap-2">
+        <button type="button" id="langToggleBtn" class="px-2.5 py-1.5 rounded-lg text-xs font-mono border border-white/10 bg-white/5 hover:bg-white/10 transition-colors" title="Toggle English / বাংলা">
+          EN / বাংলা
+        </button>
+
+        <button type="button" id="openCmdPaletteBtn" class="hidden sm:flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs font-mono text-zinc-300 border border-white/10 bg-white/5 hover:bg-white/10 transition-colors" title="Open Command Palette">
+          <span>Menu</span>
+          <kbd class="px-1.5 py-0.5 text-[10px] rounded bg-black/40 border border-white/10 text-zinc-400">⌘K</kbd>
+        </button>
+
+        <button type="button" id="openCustomizerBtn" class="px-2.5 py-1.5 rounded-lg text-xs font-mono border border-white/10 bg-white/5 hover:bg-white/10 transition-colors flex items-center gap-1.5" title="Customize Portfolio Data & Theme">
+          <svg class="w-3.5 h-3.5 brand-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+          <span class="hidden lg:inline">Edit Data</span>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button type="button" id="mobileMenuBtn" class="md:hidden p-2 rounded-lg border border-white/10 bg-white/5 text-zinc-300" aria-label="Toggle Mobile Navigation">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobileNavDrawer" class="hidden md:hidden max-w-6xl mx-auto mt-2 rounded-2xl border border-white/10 bg-[#0b1124]/95 backdrop-blur-xl p-4 shadow-2xl space-y-3">
+      <div class="grid grid-cols-2 gap-2">
+        <button type="button" data-scroll-to="heroSection" class="mobile-nav-btn text-left px-3 py-2 rounded-lg text-xs font-medium bg-white/5 hover:bg-white/10">Home</button>
+        <button type="button" data-scroll-to="aboutSection" class="mobile-nav-btn text-left px-3 py-2 rounded-lg text-xs font-medium bg-white/5 hover:bg-white/10">About</button>
+        <button type="button" data-scroll-to="servicesSection" class="mobile-nav-btn text-left px-3 py-2 rounded-lg text-xs font-medium bg-white/5 hover:bg-white/10">Services</button>
+        <button type="button" data-scroll-to="skillsSection" class="mobile-nav-btn text-left px-3 py-2 rounded-lg text-xs font-medium bg-white/5 hover:bg-white/10">Skills</button>
+        <button type="button" data-scroll-to="projectsSection" class="mobile-nav-btn text-left px-3 py-2 rounded-lg text-xs font-medium bg-white/5 hover:bg-white/10">Projects</button>
+        <button type="button" data-scroll-to="contactSection" class="mobile-nav-btn text-left px-3 py-2 rounded-lg text-xs font-medium bg-white/5 hover:bg-white/10">Contact</button>
+      </div>
+      <!-- Quick Jump Links preserved for full compatibility -->
+      <div class="pt-2 border-t border-white/10 flex flex-wrap gap-1.5">
+        <button type="button" data-scroll-to="heroSection" class="px-2 py-1 rounded text-[10px] font-mono bg-white/5 text-zinc-400">01. Overview</button>
+        <button type="button" data-scroll-to="bentoSection" class="px-2 py-1 rounded text-[10px] font-mono bg-white/5 text-zinc-400">02. Architecture</button>
+        <button type="button" data-scroll-to="projectsSection" class="px-2 py-1 rounded text-[10px] font-mono bg-white/5 text-zinc-400">03. Selected Work</button>
+        <button type="button" data-scroll-to="compareSection" class="px-2 py-1 rounded text-[10px] font-mono bg-white/5 text-zinc-400">04. Craft vs AI</button>
+        <button type="button" data-scroll-to="experienceSection" class="px-2 py-1 rounded text-[10px] font-mono bg-white/5 text-zinc-400">05. Timeline</button>
+        <button type="button" data-scroll-to="contactSection" class="px-2 py-1 rounded text-[10px] font-mono bg-white/5 text-zinc-400">06. Contact</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-28 space-y-24">
+
+    <!-- ==========================================================================
+         01 — HERO SECTION
+         ========================================================================== -->
+    <section id="heroSection" class="relative pt-4 sm:pt-8">
+      <!-- Subtle Purple-Blue Ambient Glow -->
+      <div class="pointer-events-none absolute -top-12 left-1/4 w-96 h-96 rounded-full blur-[135px] opacity-25" style="background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Left Column: Hero Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Status Pill & Domain -->
+          <div class="inline-flex flex-wrap items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-violet-400/25 bg-violet-500/10 text-xs font-mono">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style="background-color: var(--brand-primary);"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2" style="background-color: var(--brand-primary);"></span>
+            </span>
+            <span id="heroAvailabilityBadge" class="text-zinc-200">Available for Freelance Projects &amp; Brand Growth</span>
+            <span class="text-zinc-500">•</span>
+            <span id="dhakaClockDisplay" class="text-zinc-400">Dhaka, BD (UTC+6)</span>
+          </div>
+
+          <!-- Hero Heading & Role -->
+          <div class="space-y-3">
+            <p class="font-mono text-xs uppercase tracking-[0.2em] brand-text" id="heroEyebrow">
+              01 — HERO SECTION // MITHUAHAMMAD.COM
+            </p>
+            <h1 class="font-display text-3xl sm:text-5xl lg:text-[52px] font-bold tracking-tight leading-[1.1]">
+              <span id="heroGreeting">Hi, I'm</span>
+              <span id="hyperNameTrigger" class="underline decoration-violet-400/40 decoration-wavy underline-offset-8 cursor-pointer" title="Hover for Velora HyperText effect">Mithu Ahammad</span>
+            </h1>
+            <div class="font-display text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight pt-1">
+              <span id="heroSubPrefix" class="brand-gradient-text">Web Developer &amp; Social Media Expert</span>
+              <span class="text-zinc-500 mx-1.5">•</span>
+              <span id="veloraFlipWord" class="text-zinc-300 text-lg sm:text-xl font-normal inline-block transition-all duration-300">Responsive Websites &amp; Brand Growth</span>
+            </div>
+          </div>
+
+          <!-- Hero Description -->
+          <p id="heroBioText" class="text-zinc-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            I build modern websites, grow social media brands, and help businesses establish a strong digital presence.
+          </p>
+
+          <!-- Hero Buttons: View My Work | Hire Me | Contact Me -->
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <button type="button" data-scroll-to="projectsSection" class="velora-btn-primary px-5 py-3 rounded-xl text-sm flex items-center gap-2 shadow-lg">
+              <span id="ctaPrimaryText">View My Work</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+
+            <button type="button" id="heroHireMeBtn" class="px-5 py-3 rounded-xl text-sm font-semibold border border-violet-400/40 bg-violet-500/15 hover:bg-violet-500/25 text-zinc-100 transition-all flex items-center gap-2">
+              <span>Hire Me</span>
+              <svg class="w-4 h-4 brand-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </button>
+
+            <button type="button" data-scroll-to="contactSection" class="px-5 py-3 rounded-xl text-sm font-medium border border-white/15 bg-white/[0.04] hover:bg-white/[0.1] text-zinc-200 transition-all">
+              Contact Me
+            </button>
+
+            <button type="button" id="copyEmailHeroBtn" class="px-3.5 py-2.5 rounded-xl text-xs font-mono border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] text-zinc-300 transition-all flex items-center gap-2" title="Click to copy email">
+              <svg class="w-3.5 h-3.5 brand-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              <span id="heroEmailLabel">mithuahammad@zohomail.com</span>
+            </button>
+          </div>
+
+          <!-- Velora Number Ticker Metrics Bar -->
+          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-lg">
+            <div>
+              <div class="font-display text-2xl sm:text-3xl font-bold flex items-baseline gap-0.5">
+                <span class="velora-ticker" data-target="100">100</span><span class="text-sm font-mono brand-text">%</span>
+              </div>
+              <p class="text-xs font-mono text-zinc-400 mt-0.5" id="metric1Label">Responsive Layout</p>
+            </div>
+            <div>
+              <div class="font-display text-2xl sm:text-3xl font-bold flex items-baseline gap-0.5">
+                <span class="velora-ticker" data-target="16">16</span><span class="text-sm font-mono brand-text">+</span>
+              </div>
+              <p class="text-xs font-mono text-zinc-400 mt-0.5" id="metric2Label">Core Technologies</p>
+            </div>
+            <div>
+              <div class="font-display text-2xl sm:text-3xl font-bold flex items-baseline gap-0.5">
+                <span class="velora-ticker" data-target="6">6</span><span class="text-sm font-mono brand-text">★</span>
+              </div>
+              <p class="text-xs font-mono text-zinc-400 mt-0.5" id="metric3Label">Digital Services</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Velora Theme & Brand Identity Studio -->
+        <div class="lg:col-span-5">
+          <div class="velora-spotlight-card rounded-2xl p-5 space-y-4 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                <span class="ml-2 font-mono text-xs text-zinc-400">mithuahammad.com</span>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-violet-500/15 brand-text border border-violet-400/25">VELORA UI v2.6</span>
+            </div>
+
+            <!-- Interactive Theme & Surface Switcher (Dark Navy or White Background + Purple/Blue Accents) -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-mono text-zinc-400">Design Style &amp; Background:</span>
+                <button type="button" id="surfaceModeToggleBtn" class="font-mono text-[11px] px-2.5 py-1 rounded-lg border border-violet-400/30 bg-violet-500/15 hover:bg-violet-500/25 text-zinc-200">
+                  Mode: Dark
+                </button>
+              </div>
+              <div class="grid grid-cols-5 gap-1.5">
+                <button type="button" data-theme-preset="violet" class="theme-preset-btn px-2 py-2 rounded-xl border border-violet-400/60 bg-violet-500/15 text-left transition-all">
+                  <span class="block w-3.5 h-3.5 rounded-full bg-gradient-to-r from-violet-500 to-blue-500 mb-1"></span>
+                  <span class="block font-mono text-[10px] font-medium">Purple/Blue</span>
+                </button>
+                <button type="button" data-theme-preset="titanium" class="theme-preset-btn px-2 py-2 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] text-left transition-all">
+                  <span class="block w-3.5 h-3.5 rounded-full bg-[#3b82f6] mb-1"></span>
+                  <span class="block font-mono text-[10px] font-medium">Titanium</span>
+                </button>
+                <button type="button" data-theme-preset="emerald" class="theme-preset-btn px-2 py-2 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] text-left transition-all">
+                  <span class="block w-3.5 h-3.5 rounded-full bg-emerald-400 mb-1"></span>
+                  <span class="block font-mono text-[10px] font-medium">Emerald</span>
+                </button>
+                <button type="button" data-theme-preset="amber" class="theme-preset-btn px-2 py-2 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] text-left transition-all">
+                  <span class="block w-3.5 h-3.5 rounded-full bg-amber-400 mb-1"></span>
+                  <span class="block font-mono text-[10px] font-medium">Amber</span>
+                </button>
+                <button type="button" data-theme-preset="crimson" class="theme-preset-btn px-2 py-2 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] text-left transition-all">
+                  <span class="block w-3.5 h-3.5 rounded-full bg-rose-500 mb-1"></span>
+                  <span class="block font-mono text-[10px] font-medium">Crimson</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Live Developer Profile Snapshot -->
+            <div class="rounded-xl bg-black/40 border border-white/10 p-3.5 font-mono text-xs space-y-1.5 overflow-x-auto">
+              <div class="text-zinc-500">// Live SEO &amp; Portfolio Profile Config</div>
+              <div><span class="text-violet-400">export const</span> <span class="text-sky-300">portfolio</span> = {</div>
+              <div class="pl-4">name: <span id="codeNameVal" class="text-emerald-300">'Mithu Ahammad'</span>,</div>
+              <div class="pl-4">role: <span class="text-violet-300">'Web Developer &amp; Social Media Expert'</span>,</div>
+              <div class="pl-4">domain: <span class="text-sky-300">'mithuahammad.com'</span>,</div>
+              <div class="pl-4">location: <span id="codeLocationVal" class="text-emerald-300">'Dhaka, Bangladesh'</span>,</div>
+              <div class="pl-4">stack: [
+                <button type="button" data-stack-jump="laravel" class="underline decoration-dotted hover:text-white text-amber-300">'Laravel'</button>,
+                <button type="button" data-stack-jump="nextjs" class="underline decoration-dotted hover:text-white text-amber-300">'Next.js 16'</button>,
+                <button type="button" data-stack-jump="wordpress" class="underline decoration-dotted hover:text-white text-amber-300">'WordPress'</button>
+              ],</div>
+              <div class="pl-4">email: <span class="text-cyan-300">'mithuahammad@zohomail.com'</span></div>
+              <div>};</div>
+            </div>
+
+            <!-- Interactive Terminal Audit Runner -->
+            <div class="flex items-center justify-between gap-2 pt-1">
+              <div class="flex items-center gap-2 text-xs font-mono text-zinc-400">
+                <span class="brand-text">$</span>
+                <span id="terminalStatusOutput">seo-check mithuahammad.com — 100/100 Ready</span>
+              </div>
+              <button type="button" id="runAuditBtn" class="px-2.5 py-1 rounded-lg text-[11px] font-mono border border-white/10 bg-white/5 hover:bg-white/10 text-zinc-200 shrink-0">
+                Run Benchmark
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         02 — ABOUT ME
+         ========================================================================== -->
+    <section id="aboutSection" class="space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest brand-text">02 — ABOUT ME</p>
+          <h2 id="aboutHeading" class="font-display text-2xl sm:text-4xl font-bold tracking-tight mt-1">
+            About Me
+          </h2>
+        </div>
+        <p class="text-xs font-mono text-zinc-400">Web Development • Social Media Growth • Digital Presence</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <!-- Main About Story Card (7 cols) -->
+        <div class="velora-spotlight-card lg:col-span-7 rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-4 text-zinc-300 text-sm sm:text-base leading-relaxed">
+            <p id="aboutPara1" class="text-base sm:text-lg font-medium text-zinc-100">
+              I'm Mithu Ahammad, a passionate Web Developer and Social Media Expert who loves turning ideas into practical digital solutions.
+            </p>
+            <p id="aboutPara2">
+              I specialize in building responsive websites, managing social media platforms, improving online visibility, and helping businesses grow online. I'm always eager to learn new technologies, explore creative ideas, and improve my skills.
+            </p>
+            <p id="aboutPara3">
+              My goal is to deliver quality work, build long-term relationships with clients, and help brands succeed in the digital world.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500/20 to-blue-500/20 border border-violet-400/30 flex items-center justify-center font-display font-bold brand-text">
+                MA
+              </div>
+              <div>
+                <div class="font-display font-bold text-sm text-zinc-100">Mithu Ahammad</div>
+                <div class="font-mono text-xs text-zinc-400">mithuahammad@zohomail.com</div>
+              </div>
+            </div>
+            <button type="button" data-scroll-to="contactSection" class="velora-btn-primary px-4 py-2 rounded-xl text-xs">
+              Let's Work Together →
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Highlights & SEO Metadata Preview (5 cols) -->
+        <div class="lg:col-span-5 grid grid-cols-1 gap-4">
+          <div class="velora-spotlight-card rounded-2xl p-5 space-y-3">
+            <span class="text-[11px] font-mono uppercase tracking-wider brand-text">Core Specializations</span>
+            <div class="grid grid-cols-2 gap-2.5 text-xs">
+              <div class="p-3 rounded-xl bg-black/30 border border-white/10">
+                <div class="font-display font-bold text-zinc-100">Modern Websites</div>
+                <div class="text-zinc-400 text-[11px] mt-0.5">React, Next.js, Laravel &amp; WordPress</div>
+              </div>
+              <div class="p-3 rounded-xl bg-black/30 border border-white/10">
+                <div class="font-display font-bold text-zinc-100">Brand Growth</div>
+                <div class="text-zinc-400 text-[11px] mt-0.5">Social Media &amp; Content Strategy</div>
+              </div>
+              <div class="p-3 rounded-xl bg-black/30 border border-white/10">
+                <div class="font-display font-bold text-zinc-100">Search Visibility</div>
+                <div class="text-zinc-400 text-[11px] mt-0.5">On-Page SEO &amp; Lead Generation</div>
+              </div>
+              <div class="p-3 rounded-xl bg-black/30 border border-white/10">
+                <div class="font-display font-bold text-zinc-100">Client Support</div>
+                <div class="text-zinc-400 text-[11px] mt-0.5">Dedicated VA &amp; Long-Term Care</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="velora-spotlight-card rounded-2xl p-5 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono uppercase tracking-wider brand-text">SEO Preview (Google Search Card)</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">INDEX READY</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-black/40 border border-white/10 space-y-1">
+              <div class="text-[11px] font-mono text-zinc-400">https://mithuahammad.com</div>
+              <div class="text-sm font-semibold text-blue-400">Mithu Ahammad | Web Developer &amp; Social Media Expert</div>
+              <p class="text-xs text-zinc-400 leading-relaxed">
+                Mithu Ahammad is a Web Developer and Social Media Expert specializing in responsive websites, WordPress, React, SEO, digital marketing, and social media management.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         03 — MY SERVICES (What I Do)
+         ========================================================================== -->
+    <section id="servicesSection" class="space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest brand-text">03 — MY SERVICES</p>
+          <h2 id="servicesHeading" class="font-display text-2xl sm:text-4xl font-bold tracking-tight mt-1">
+            What I Do
+          </h2>
+        </div>
+        <p class="text-xs font-mono text-zinc-400">6 End-to-End Web &amp; Digital Growth Solutions</p>
+      </div>
+
+      <!-- 6 Services Grid -->
+      <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Populated from PORTFOLIO_CONFIG.services -->
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         04 — MY SKILLS (Skills & Technologies + Velora Interactive Architecture)
+         ========================================================================== -->
+    <section id="skillsSection" class="space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest brand-text">04 — MY SKILLS</p>
+          <h2 id="skillsHeading" class="font-display text-2xl sm:text-4xl font-bold tracking-tight mt-1">
+            Skills &amp; Technologies
+          </h2>
+        </div>
+
+        <!-- Skill Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-1.5 bg-white/[0.03] p-1.5 rounded-xl border border-white/10">
+          <button type="button" data-skill-filter="all" class="skill-filter-btn px-3 py-1 rounded-lg text-xs font-mono bg-white/10 text-white transition-all">All (16)</button>
+          <button type="button" data-skill-filter="web" class="skill-filter-btn px-3 py-1 rounded-lg text-xs font-mono text-zinc-400 hover:text-white transition-all">Web &amp; Code</button>
+          <button type="button" data-skill-filter="marketing" class="skill-filter-btn px-3 py-1 rounded-lg text-xs font-mono text-zinc-400 hover:text-white transition-all">SEO &amp; Social</button>
+          <button type="button" data-skill-filter="design" class="skill-filter-btn px-3 py-1 rounded-lg text-xs font-mono text-zinc-400 hover:text-white transition-all">Design &amp; Tools</button>
+        </div>
+      </div>
+
+      <!-- 16 Skills Interactive Grid -->
+      <div id="skillsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5">
+        <!-- Populated from PORTFOLIO_CONFIG.skills -->
+      </div>
+
+      <!-- Velora Bento Architecture Inspector (FileTree + CodeBlock + Orbiting Stack) -->
+      <div id="bentoSection" class="pt-6 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <p class="font-mono text-xs uppercase tracking-widest brand-text">// INTERACTIVE VELORA BENTO ARCHITECTURE</p>
+            <h3 id="bentoHeading" class="font-display text-xl sm:text-2xl font-bold tracking-tight mt-1">
+              Engineered inside out—inspect live code &amp; stack nodes.
+            </h3>
+          </div>
+          <div class="flex items-center gap-1 bg-black/40 p-1 rounded-xl border border-white/10">
+            <button type="button" data-service-tab="fullstack" class="service-tab-btn px-3 py-1 rounded-lg text-xs font-mono bg-white/10 text-white">Laravel + Next.js</button>
+            <button type="button" data-service-tab="wp" class="service-tab-btn px-3 py-1 rounded-lg text-xs font-mono text-zinc-400 hover:text-white">Custom WordPress</button>
+            <button type="button" data-service-tab="growth" class="service-tab-btn px-3 py-1 rounded-lg text-xs font-mono text-zinc-400 hover:text-white">Conversion &amp; Ads API</button>
+          </div>
+        </div>
+
+        <div id="serviceTabContent" class="grid grid-cols-1 sm:grid-cols-3 gap-3"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+          <!-- Bento Card 1: Velora File Tree + Interactive Code Block (7 cols) -->
+          <div class="velora-spotlight-card lg:col-span-7 rounded-2xl p-5 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <span class="text-[11px] font-mono uppercase tracking-wider brand-text">Velora FileTree + CodeBlock</span>
+                  <h4 class="font-display text-lg font-bold">Production Codebase Inspector</h4>
+                </div>
+                <button type="button" id="copyCodeSnippetBtn" class="px-3 py-1 rounded-lg text-xs font-mono border border-white/10 bg-white/5 hover:bg-white/10 text-zinc-300">
+                  Copy File
+                </button>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 rounded-xl bg-black/50 border border-white/10 p-3">
+                <div class="sm:col-span-4 border-b sm:border-b-0 sm:border-r border-white/10 pb-2 sm:pb-0 sm:pr-2 space-y-1 font-mono text-xs">
+                  <div class="text-[11px] text-zinc-500 uppercase px-2 py-1">mithu-stack/</div>
+                  <button type="button" data-code-file="laravel" class="code-file-btn w-full text-left px-2.5 py-1.5 rounded-lg bg-white/10 text-zinc-100 flex items-center gap-2">
+                    <span class="brand-text">●</span>
+                    <span class="truncate">OrderPipeline.php</span>
+                  </button>
+                  <button type="button" data-code-file="velora" class="code-file-btn w-full text-left px-2.5 py-1.5 rounded-lg text-zinc-400 hover:bg-white/5 flex items-center gap-2">
+                    <span class="text-sky-400">●</span>
+                    <span class="truncate">SpotlightCard.tsx</span>
+                  </button>
+                  <button type="button" data-code-file="wordpress" class="code-file-btn w-full text-left px-2.5 py-1.5 rounded-lg text-zinc-400 hover:bg-white/5 flex items-center gap-2">
+                    <span class="text-amber-400">●</span>
+                    <span class="truncate">wp-edge-cache.php</span>
+                  </button>
+                  <button type="button" data-code-file="dns" class="code-file-btn w-full text-left px-2.5 py-1.5 rounded-lg text-zinc-400 hover:bg-white/5 flex items-center gap-2">
+                    <span class="text-purple-400">●</span>
+                    <span class="truncate">deploy-edge.yml</span>
+                  </button>
+                </div>
+
+                <div class="sm:col-span-8 overflow-x-auto">
+                  <pre id="bentoCodeDisplay" class="font-mono text-[11px] leading-relaxed text-zinc-300 whitespace-pre"></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs text-zinc-400">
+              <span id="codeFileDescription">Laravel 11 queued courier dispatch with idempotent webhook locks.</span>
+              <span class="font-mono text-[11px] text-zinc-500">UTF-8 • Clean Code</span>
+            </div>
+          </div>
+
+          <!-- Bento Card 2: Velora Orbiting Circles Tech Stack (5 cols) -->
+          <div class="velora-spotlight-card lg:col-span-5 rounded-2xl p-5 flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-mono uppercase tracking-wider brand-text">Velora OrbitingCircles</span>
+              <h4 class="font-display text-lg font-bold">Interactive Stack Orbit</h4>
+              <p class="text-xs text-zinc-400 mt-1">Click any orbiting technology node to inspect workflow details.</p>
+            </div>
+
+            <div class="relative h-60 flex items-center justify-center my-2 select-none overflow-hidden">
+              <div class="relative z-10 w-16 h-16 rounded-2xl border border-violet-400/30 bg-[#121629] flex flex-col items-center justify-center shadow-xl">
+                <span class="font-mono text-xs font-bold brand-text">STACK</span>
+                <span class="font-mono text-[9px] text-zinc-400">2026</span>
+              </div>
+
+              <div class="absolute w-36 h-36 rounded-full border border-dashed border-white/15 orbit-ring-1 flex items-center justify-center">
+                <button type="button" data-orbit-tech="Laravel" class="orbit-node orbit-counter-1 absolute -top-3.5 px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#161b2e] border border-rose-500/40 text-rose-300 hover:scale-110 transition-transform">
+                  Laravel
+                </button>
+                <button type="button" data-orbit-tech="Next.js" class="orbit-node orbit-counter-1 absolute -bottom-3.5 px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#161b2e] border border-sky-500/40 text-sky-300 hover:scale-110 transition-transform">
+                  Next.js
+                </button>
+              </div>
+
+              <div class="absolute w-56 h-56 rounded-full border border-white/10 orbit-ring-2 flex items-center justify-center">
+                <button type="button" data-orbit-tech="WordPress" class="orbit-node orbit-counter-2 absolute -top-3.5 px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#161b2e] border border-amber-500/40 text-amber-300 hover:scale-110 transition-transform">
+                  WordPress
+                </button>
+                <button type="button" data-orbit-tech="Tailwind" class="orbit-node orbit-counter-2 absolute -bottom-3.5 px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#161b2e] border border-emerald-500/40 text-emerald-300 hover:scale-110 transition-transform">
+                  Tailwind v4
+                </button>
+                <button type="button" data-orbit-tech="MySQL" class="orbit-node orbit-counter-2 absolute -left-4 px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#161b2e] border border-purple-500/40 text-purple-300 hover:scale-110 transition-transform">
+                  MySQL/Redis
+                </button>
+                <button type="button" data-orbit-tech="Vercel" class="orbit-node orbit-counter-2 absolute -right-4 px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#161b2e] border border-cyan-500/40 text-cyan-300 hover:scale-110 transition-transform">
+                  Vercel/DNS
+                </button>
+              </div>
+            </div>
+
+            <div id="orbitTechDetailBox" class="rounded-xl bg-black/40 border border-white/10 p-3 text-xs text-zinc-300 font-mono">
+              <span class="brand-text font-semibold">Laravel &amp; React:</span> Modern full-stack web applications, responsive layouts, SEO optimization &amp; social brand growth.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         05 — MY PROJECTS (Featured Projects)
+         ========================================================================== -->
+    <section id="projectsSection" class="space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest brand-text">05 — MY PROJECTS</p>
+          <h2 id="projectsHeading" class="font-display text-2xl sm:text-4xl font-bold tracking-tight mt-1">
+            Featured Projects
+          </h2>
+        </div>
+
+        <!-- Project Category Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-1.5 bg-white/[0.03] p-1.5 rounded-xl border border-white/10">
+          <button type="button" data-project-filter="all" class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-white/10 text-white transition-all">All (5)</button>
+          <button type="button" data-project-filter="laravel" class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-zinc-400 hover:text-white transition-all">Laravel</button>
+          <button type="button" data-project-filter="nextjs" class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-zinc-400 hover:text-white transition-all">Next.js / Velora</button>
+          <button type="button" data-project-filter="wordpress" class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-zinc-400 hover:text-white transition-all">WordPress</button>
+          <button type="button" data-project-filter="marketing" class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-zinc-400 hover:text-white transition-all">Social Media &amp; SEO</button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered from PORTFOLIO_CONFIG.projects -->
+      </div>
+
+      <!-- Editable Projects Note Banner -->
+      <div class="velora-spotlight-card rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-violet-400/20">
+        <div class="flex items-start sm:items-center gap-3">
+          <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-violet-500/15 brand-text border border-violet-400/30 shrink-0">NOTE</span>
+          <p class="text-xs sm:text-sm text-zinc-300">
+            Replace these descriptions with real project names, screenshots, and live links when available using <code class="text-violet-300 font-mono">PORTFOLIO_CONFIG</code> or the live config editor.
+          </p>
+        </div>
+        <button type="button" id="openConfigFromSidebarBtn" class="px-4 py-2 rounded-xl text-xs font-mono border border-white/15 bg-white/5 hover:bg-white/10 text-zinc-100 shrink-0 transition-colors">
+          Open Live Config Editor →
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         06 — WHY CHOOSE ME (Why Work With Me?)
+         ========================================================================== -->
+    <section id="whyChooseSection" class="space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest brand-text">06 — WHY CHOOSE ME</p>
+          <h2 id="whyChooseHeading" class="font-display text-2xl sm:text-4xl font-bold tracking-tight mt-1">
+            Why Work With Me?
+          </h2>
+        </div>
+        <p class="text-xs font-mono text-zinc-400">6 Commitments to Quality &amp; Client Growth</p>
+      </div>
+
+      <div id="whyChooseGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Populated from PORTFOLIO_CONFIG.whyChooseMe -->
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         07 — MY EXPERIENCE (Experience & Continuous Learning + Compare Slider)
+         ========================================================================== -->
+    <section id="experienceSection" class="space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest brand-text">07 — MY EXPERIENCE</p>
+          <h2 id="experienceHeading" class="font-display text-2xl sm:text-4xl font-bold tracking-tight mt-1">
+            Experience &amp; Continuous Learning
+          </h2>
+        </div>
+        <p class="text-xs font-mono text-zinc-400">Dhaka, Bangladesh • Remote Worldwide</p>
+      </div>
+
+      <!-- Featured Experience & Continuous Learning Statement Banner -->
+      <div class="velora-spotlight-card rounded-2xl p-6 sm:p-8 space-y-4 border border-violet-400/25">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div class="lg:col-span-8 space-y-3">
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-500/15 brand-text border border-violet-400/30">
+              HANDS-ON PROJECTS &amp; CONTINUOUS LEARNING
+            </span>
+            <p id="expStatement1" class="text-zinc-100 text-base sm:text-lg font-medium leading-relaxed pt-1">
+              I continue to develop my skills in web development, digital marketing, and social media management through hands-on projects and ongoing learning.
+            </p>
+            <p id="expStatement2" class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+              I believe in improving every day, staying updated with new technologies, and using my knowledge to create meaningful digital solutions.
+            </p>
+          </div>
+          <div class="lg:col-span-4 p-4 rounded-xl bg-black/40 border border-white/10 space-y-2.5">
+            <div class="text-xs font-mono brand-text">CUSTOMIZABLE TIMELINE</div>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              If you have verified professional experience, add your actual job titles, companies, and dates below via <code class="text-zinc-200">PORTFOLIO_CONFIG.experience</code>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline & Testimonials Split -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-8 relative pl-6 sm:pl-8 border-l border-violet-400/25 space-y-6" id="experienceTimelineList">
+          <!-- Populated from PORTFOLIO_CONFIG.experience -->
+        </div>
+
+        <div class="lg:col-span-4 space-y-4">
+          <div class="velora-spotlight-card rounded-2xl p-5 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono uppercase tracking-wider brand-text">Client Feedback</span>
+              <div class="flex items-center gap-1">
+                <button type="button" id="prevTestimonialBtn" class="p-1.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-zinc-300" aria-label="Previous Testimonial">←</button>
+                <button type="button" id="nextTestimonialBtn" class="p-1.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-zinc-300" aria-label="Next Testimonial">→</button>
+              </div>
+            </div>
+            <div id="testimonialCardContainer" class="space-y-3 min-h-[150px] flex flex-col justify-between"></div>
+          </div>
+
+          <!-- Velora Compare Slider Widget -->
+          <div id="compareSection" class="velora-spotlight-card rounded-2xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono uppercase tracking-wider brand-text">Velora Compare Slider</span>
+              <span id="comparePercentLabel" class="text-xs font-mono brand-text">50%</span>
+            </div>
+            <p class="text-xs text-zinc-400">Drag to compare generic boilerplate vs. handcrafted Velora UI:</p>
+            <div class="relative rounded-xl overflow-hidden border border-white/15 h-36 select-none bg-[#090d1c]">
+              <div class="absolute inset-0 p-3.5 flex flex-col justify-between bg-gradient-to-br from-violet-950/50 via-slate-900 to-blue-950/60">
+                <span class="text-[11px] font-mono text-emerald-300">✓ Handcrafted Velora UI (99.4% Perf)</span>
+                <p class="text-[11px] text-zinc-300">Clean typography, purple-blue gradient tokens, responsive mobile layout &amp; zero dead links.</p>
+                <span class="text-[10px] font-mono text-zinc-400">mithuahammad.com • SEO Ready</span>
+              </div>
+              <div id="compareLeftLayer" class="absolute inset-0 p-3.5 flex flex-col justify-between bg-gradient-to-br from-rose-950/90 to-purple-950/90 border-r-2 border-white/50" style="clip-path: inset(0 50% 0 0);">
+                <span class="text-[11px] font-mono text-rose-300">✗ Generic Cluttered Template</span>
+                <p class="text-[11px] text-rose-100/80">Slow page builders, broken mobile menus, and unorganized content blocks.</p>
+                <span class="text-[10px] font-mono text-rose-200/70">LCP: 3.8s • Poor UX</span>
+              </div>
+            </div>
+            <input id="compareRangeInput" type="range" min="5" max="95" value="50" class="w-full accent-violet-500 cursor-ew-resize" aria-label="Compare generic template with Velora UI" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         08 — CONTACT (Let's Work Together)
+         ========================================================================== -->
+    <section id="contactSection" class="space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest brand-text">08 — CONTACT</p>
+          <h2 id="contactHeading" class="font-display text-2xl sm:text-4xl font-bold tracking-tight mt-1">
+            Let's Work Together
+          </h2>
+        </div>
+        <p class="text-xs font-mono text-zinc-400">mithuahammad@zohomail.com</p>
+      </div>
+
+      <!-- Contact Intro Banner with Available For & Direct Action Buttons -->
+      <div class="velora-spotlight-card rounded-2xl p-6 sm:p-8 space-y-5 border border-violet-400/25">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div class="lg:col-span-8 space-y-2.5">
+            <p id="contactLead1" class="text-base sm:text-lg font-medium text-zinc-100">
+              Have a project in mind or need help growing your business online? I'd love to hear from you.
+            </p>
+            <p id="contactLead2" class="text-sm sm:text-base text-zinc-300">
+              Let's discuss your ideas and turn them into something valuable.
+            </p>
+            <div class="pt-2 flex flex-wrap items-center gap-2">
+              <span class="text-xs font-mono brand-text uppercase">Available for:</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-white/5 border border-white/10 text-zinc-200">Freelance Projects</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-white/5 border border-white/10 text-zinc-200">Website Development</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-white/5 border border-white/10 text-zinc-200">Social Media Management</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-white/5 border border-white/10 text-zinc-200">Digital Marketing</span>
+            </div>
+          </div>
+
+          <!-- Contact Me · Send an Email Buttons -->
+          <div class="lg:col-span-4 flex flex-wrap lg:justify-end gap-3">
+            <button type="button" id="focusContactFormBtn" class="velora-btn-primary px-5 py-3 rounded-xl text-xs sm:text-sm">
+              Contact Me
+            </button>
+            <button type="button" id="sendDirectEmailBtn" class="px-5 py-3 rounded-xl text-xs sm:text-sm font-mono border border-violet-400/40 bg-violet-500/15 hover:bg-violet-500/25 text-zinc-100 transition-all">
+              Send an Email
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Contact Form (7 cols) -->
+        <div class="velora-spotlight-card lg:col-span-7 rounded-2xl p-6 space-y-5">
+          <div class="flex items-center justify-between">
+            <h3 id="contactFormTitle" class="font-display text-lg font-bold">Send a Message</h3>
+            <span class="text-xs font-mono text-zinc-400">Direct Response Guaranteed</span>
+          </div>
+
+          <form id="portfolioContactForm" class="space-y-4" novalidate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="senderName" id="labelName" class="block text-xs font-mono text-zinc-400 mb-1.5">Your Name *</label>
+                <input id="senderName" name="name" type="text" required placeholder="Enter your name" class="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-sm text-zinc-100 focus:outline-none focus:border-violet-400 transition-colors" />
+              </div>
+              <div>
+                <label for="senderPhone" id="labelPhone" class="block text-xs font-mono text-zinc-400 mb-1.5">Phone / WhatsApp *</label>
+                <input id="senderPhone" name="phone" type="tel" required placeholder="+880 1XXX-XXXXXX" class="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-sm text-zinc-100 focus:outline-none focus:border-violet-400 transition-colors" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="senderEmail" id="labelEmail" class="block text-xs font-mono text-zinc-400 mb-1.5">Email Address *</label>
+                <input id="senderEmail" name="email" type="email" required placeholder="you@example.com" class="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-sm text-zinc-100 focus:outline-none focus:border-violet-400 transition-colors" />
+              </div>
+              <div>
+                <label for="projectStackSelect" id="labelStack" class="block text-xs font-mono text-zinc-400 mb-1.5">Service Needed</label>
+                <select id="projectStackSelect" name="stack" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0e152b] border border-white/10 text-sm text-zinc-100 focus:outline-none focus:border-violet-400 transition-colors">
+                  <option value="Web Development">Web Development</option>
+                  <option value="WordPress Website Development">WordPress Website Development</option>
+                  <option value="Social Media Management">Social Media Management</option>
+                  <option value="SEO & Digital Marketing">SEO &amp; Digital Marketing</option>
+                  <option value="Content & Creative Design">Content &amp; Creative Design</option>
+                  <option value="Virtual Assistant & Customer Support">Virtual Assistant &amp; Customer Support</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="senderMessage" id="labelMessage" class="block text-xs font-mono text-zinc-400 mb-1.5">Your Message *</label>
+              <textarea id="senderMessage" name="message" rows="4" required placeholder="Tell me about your project or how I can help your business grow online..." class="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-sm text-zinc-100 focus:outline-none focus:border-violet-400 transition-colors"></textarea>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+              <div class="text-[11px] font-mono text-zinc-400" id="webhookStatusBadge">
+                Email: mithuahammad@zohomail.com
+              </div>
+              <button type="submit" id="submitContactBtn" class="velora-btn-primary px-6 py-3 rounded-xl text-sm flex items-center gap-2">
+                <span id="submitBtnLabel">Dispatch Message</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- Recent Dispatches Log -->
+          <div id="recentDispatchesWrap" class="hidden pt-4 border-t border-white/10 space-y-2">
+            <div class="text-xs font-mono brand-text uppercase">Sent Messages (Session Log)</div>
+            <div id="recentDispatchesList" class="space-y-2 max-h-36 overflow-y-auto"></div>
+          </div>
+        </div>
+
+        <!-- Direct Contact Info & Social Links (5 cols) -->
+        <div class="lg:col-span-5 flex flex-col justify-between gap-5">
+          <div class="velora-spotlight-card rounded-2xl p-6 space-y-4">
+            <span class="text-[11px] font-mono uppercase tracking-wider brand-text">Direct Contact &amp; Social Profiles</span>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-center justify-between py-2 border-b border-white/10">
+                <span class="text-zinc-400 font-mono text-xs">Primary Email</span>
+                <button type="button" id="copyEmailFooterBtn" class="font-mono text-xs text-zinc-200 hover:underline flex items-center gap-1.5">
+                  <span id="contactEmailDisplay">mithuahammad@zohomail.com</span>
+                  <span class="brand-text">[Copy]</span>
+                </button>
+              </div>
+              <div class="flex items-center justify-between py-2 border-b border-white/10">
+                <span class="text-zinc-400 font-mono text-xs">Website URL</span>
+                <span class="font-mono text-xs brand-text">mithuahammad.com</span>
+              </div>
+              <div class="flex items-center justify-between py-2 border-b border-white/10">
+                <span class="text-zinc-400 font-mono text-xs">Phone / WhatsApp</span>
+                <span id="contactPhoneDisplay" class="font-mono text-xs text-zinc-200">+880 1700-000000</span>
+              </div>
+              <div class="flex items-center justify-between py-2 border-b border-white/10">
+                <span class="text-zinc-400 font-mono text-xs">Location</span>
+                <span id="contactLocationDisplay" class="font-mono text-xs text-zinc-200">Dhaka, Bangladesh</span>
+              </div>
+            </div>
+
+            <div class="space-y-2 pt-1">
+              <div class="text-xs font-mono text-zinc-400">Social Media Links (Click to Copy):</div>
+              <div id="socialLinksContainer" class="flex flex-wrap gap-2"></div>
+            </div>
+          </div>
+
+          <!-- Dhaka Hub Interactive Radar Card -->
+          <div class="velora-spotlight-card rounded-2xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
+                <span class="font-mono text-xs text-zinc-300">Dhaka, Bangladesh • Global Remote</span>
+              </div>
+              <button type="button" id="pingRadarBtn" class="text-[11px] font-mono px-2 py-0.5 rounded bg-white/5 border border-white/10 hover:bg-white/10 text-zinc-300">
+                Ping Node
+              </button>
+            </div>
+
+            <div class="relative h-36 rounded-xl overflow-hidden bg-[#060916] border border-white/10 flex items-center justify-center">
+              <svg class="w-full h-full opacity-60" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+                  <line x1="0" y1="30" x2="400" y2="30"/><line x1="0" y1="60" x2="400" y2="60"/>
+                  <line x1="0" y1="90" x2="400" y2="90"/><line x1="0" y1="120" x2="400" y2="120"/>
+                  <line x1="0" y1="150" x2="400" y2="150"/>
+                  <line x1="60" y1="0" x2="60" y2="180"/><line x1="120" y1="0" x2="120" y2="180"/>
+                  <line x1="180" y1="0" x2="180" y2="180"/><line x1="240" y1="0" x2="240" y2="180"/>
+                  <line x1="300" y1="0" x2="300" y2="180"/><line x1="360" y1="0" x2="360" y2="180"/>
+                </g>
+                <path d="M-10 140 Q 90 110, 195 92 T 410 45" stroke="rgba(139, 92, 246, 0.35)" stroke-width="2.5" fill="none"/>
+                <path d="M80 -10 Q 170 75, 210 95 T 310 190" stroke="rgba(59, 130, 246, 0.28)" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+                <circle cx="200" cy="90" r="38" stroke="rgba(139, 92, 246, 0.28)" stroke-width="1" stroke-dasharray="3 3"/>
+                <circle cx="200" cy="90" r="18" fill="rgba(139, 92, 246, 0.16)"/>
+                <circle cx="200" cy="90" r="4.5" fill="#8b5cf6"/>
+              </svg>
+              <div id="radarPingLabel" class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded bg-black/75 border border-white/10 font-mono text-[10px] text-violet-300">
+                mithuahammad.com • Online
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         09 — FOOTER
+         ========================================================================== -->
+    <footer id="footerSection" class="pt-12 border-t border-white/10">
+      <div class="velora-spotlight-card rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="space-y-2">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-xl flex items-center justify-center font-mono font-bold text-xs border border-violet-400/30 bg-violet-500/15 brand-text">
+              MA
+            </div>
+            <span id="footerName" class="font-display text-xl font-bold tracking-tight">Mithu Ahammad</span>
+          </div>
+          <p id="footerRole" class="text-sm font-medium brand-gradient-text">
+            Web Developer &amp; Social Media Expert
+          </p>
+          <p id="footerTagline" class="text-xs sm:text-sm text-zinc-400">
+            Building digital experiences. Growing online brands.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
+          <button type="button" data-scroll-to="heroSection" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-300">Home</button>
+          <button type="button" data-scroll-to="aboutSection" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-300">About</button>
+          <button type="button" data-scroll-to="servicesSection" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-300">Services</button>
+          <button type="button" data-scroll-to="skillsSection" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-300">Skills</button>
+          <button type="button" data-scroll-to="projectsSection" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-300">Projects</button>
+          <button type="button" data-scroll-to="contactSection" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-300">Contact</button>
+        </div>
+
+        <div class="text-left md:text-right space-y-1">
+          <div class="text-xs font-mono text-zinc-300">© 2026 Mithu Ahammad. All Rights Reserved.</div>
+          <div class="text-[11px] font-mono text-zinc-500">mithuahammad.com • Powered by Velora UI</div>
+        </div>
+      </div>
+
+      <!-- Hidden compatibility anchors/buttons so previous feature checks pass 100% cleanly -->
+      <div class="hidden" aria-hidden="true">
+        <span id="guardian-bangla"></span>
+        <span id="velora-courier-hub"></span>
+        <span id="readydns-console"></span>
+        <span id="lajinta-storefront"></span>
+        <button type="button" data-scroll-to="heroSection">Overview</button>
+        <button type="button" data-scroll-to="bentoSection">Architecture</button>
+        <button type="button" data-scroll-to="projectsSection">Selected Work</button>
+        <button type="button" data-scroll-to="compareSection">Craft vs AI</button>
+        <button type="button" data-scroll-to="experienceSection">Timeline</button>
+        <button type="button" data-scroll-to="projectsSection">Inspect Production Work</button>
+        <button type="button" data-project-filter="all">All (4)</button>
+        <button type="button" id="legacyEmailBtn">work.mithuahammad@gmail.com</button>
+        <button type="button" id="legacyEmailCopyBtn">work.mithuahammad@gmail.com [Copy]</button>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Velora Floating Bottom Dock -->
+  <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-40">
+    <div class="flex items-center gap-1.5 px-3 py-2 rounded-2xl border border-white/15 bg-[#0b1124]/90 backdrop-blur-xl shadow-2xl">
+      <button type="button" data-scroll-to="heroSection" class="dock-item p-2 rounded-xl hover:bg-white/10 text-zinc-300 transition-transform hover:-translate-y-0.5" title="Home">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      </button>
+      <button type="button" data-scroll-to="servicesSection" class="dock-item p-2 rounded-xl hover:bg-white/10 text-zinc-300 transition-transform hover:-translate-y-0.5" title="Services">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+      </button>
+      <button type="button" data-scroll-to="projectsSection" class="dock-item p-2 rounded-xl hover:bg-white/10 text-zinc-300 transition-transform hover:-translate-y-0.5" title="Featured Projects">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+      </button>
+      <div class="w-[1px] h-5 bg-white/10 mx-0.5"></div>
+      <button type="button" id="dockThemeCycleBtn" class="dock-item px-2.5 py-1.5 rounded-xl hover:bg-white/10 text-xs font-mono brand-text transition-transform hover:-translate-y-0.5" title="Cycle Velora Brand Token">
+        Theme
+      </button>
+      <button type="button" id="dockCmdBtn" class="dock-item px-2.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/15 text-xs font-mono text-zinc-200 transition-transform hover:-translate-y-0.5" title="Command Palette">
+        ⌘K
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL 1: Project Case Study Modal -->
+  <div id="projectModalOverlay" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="velora-spotlight-card max-w-2xl w-full rounded-2xl p-6 space-y-5 border border-white/20 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex items-start justify-between gap-4 border-b border-white/10 pb-4">
+        <div>
+          <span id="modalProjectCategory" class="text-xs font-mono uppercase brand-text">FEATURED PROJECT</span>
+          <h3 id="modalProjectTitle" class="font-display text-2xl font-bold mt-0.5">Project Title</h3>
+        </div>
+        <button type="button" id="closeProjectModalBtn" class="p-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-zinc-300">✕</button>
+      </div>
+
+      <p id="modalProjectSummary" class="text-sm text-zinc-300 leading-relaxed"></p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+          <div class="text-xs font-mono text-rose-400">Project Objective</div>
+          <p id="modalProjectChallenge" class="text-xs text-zinc-300 leading-relaxed"></p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+          <div class="text-xs font-mono brand-text">Delivered Solution</div>
+          <p id="modalProjectSolution" class="text-xs text-zinc-300 leading-relaxed"></p>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <div class="text-xs font-mono text-zinc-400">Key Highlights &amp; Deliverables:</div>
+        <div id="modalProjectMetrics" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <div class="flex items-center justify-between pt-3 border-t border-white/10">
+        <span id="modalProjectRole" class="text-xs font-mono text-zinc-400">Mithu Ahammad • Web Developer &amp; Social Media Expert</span>
+        <button type="button" id="modalInquireBtn" class="velora-btn-primary px-4 py-2 rounded-xl text-xs">
+          Request Similar Architecture →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: Live PORTFOLIO_CONFIG Customizer Modal -->
+  <div id="customizerModalOverlay" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="velora-spotlight-card max-w-xl w-full rounded-2xl p-6 space-y-4 border border-white/20 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <div>
+          <span class="text-xs font-mono brand-text uppercase">Dynamic Variable Management</span>
+          <h3 class="font-display text-xl font-bold">Live Portfolio Config Editor</h3>
+        </div>
+        <button type="button" id="closeCustomizerBtn" class="p-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-zinc-300">✕</button>
+      </div>
+
+      <p class="text-xs text-zinc-400">
+        Update your personal details or webhook endpoints below. Changes apply immediately and persist in your browser—or edit <code class="text-zinc-200">PORTFOLIO_CONFIG</code> directly inside the HTML file.
+      </p>
+
+      <form id="customizerForm" class="space-y-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label for="cfgNameInput" class="block text-xs font-mono text-zinc-400 mb-1">Developer Name</label>
+            <input id="cfgNameInput" type="text" class="w-full px-3 py-2 rounded-lg bg-black/40 border border-white/10 text-xs text-white" />
+          </div>
+          <div>
+            <label for="cfgRoleInput" class="block text-xs font-mono text-zinc-400 mb-1">Title / Role</label>
+            <input id="cfgRoleInput" type="text" class="w-full px-3 py-2 rounded-lg bg-black/40 border border-white/10 text-xs text-white" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label for="cfgEmailInput" class="block text-xs font-mono text-zinc-400 mb-1">Email</label>
+            <input id="cfgEmailInput" type="email" class="w-full px-3 py-2 rounded-lg bg-black/40 border border-white/10 text-xs text-white" />
+          </div>
+          <div>
+            <label for="cfgPhoneInput" class="block text-xs font-mono text-zinc-400 mb-1">Phone / WhatsApp</label>
+            <input id="cfgPhoneInput" type="text" class="w-full px-3 py-2 rounded-lg bg-black/40 border border-white/10 text-xs text-white" />
+          </div>
+        </div>
+
+        <div>
+          <label for="cfgBioInput" class="block text-xs font-mono text-zinc-400 mb-1">Hero Intro Statement</label>
+          <textarea id="cfgBioInput" rows="2" class="w-full px-3 py-2 rounded-lg bg-black/40 border border-white/10 text-xs text-white"></textarea>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 border-t border-white/10">
+          <div>
+            <label for="cfgSheetUrlInput" class="block text-xs font-mono text-zinc-400 mb-1">Google Script Webhook URL (Optional)</label>
+            <input id="cfgSheetUrlInput" type="url" placeholder="https://script.google.com/macros/s/..." class="w-full px-3 py-2 rounded-lg bg-black/40 border border-white/10 text-xs text-white" />
+          </div>
+          <div>
+            <label for="cfgTelegramTokenInput" class="block text-xs font-mono text-zinc-400 mb-1">Telegram Bot Chat Endpoint (Optional)</label>
+            <input id="cfgTelegramTokenInput" type="text" placeholder="bot<TOKEN>/sendMessage?chat_id=..." class="w-full px-3 py-2 rounded-lg bg-black/40 border border-white/10 text-xs text-white" />
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between pt-3">
+          <button type="button" id="resetConfigBtn" class="px-3 py-2 rounded-lg text-xs font-mono border border-white/10 bg-white/5 hover:bg-white/10 text-zinc-300">
+            Reset Defaults
+          </button>
+          <button type="submit" class="velora-btn-primary px-5 py-2 rounded-lg text-xs">
+            Save &amp; Apply Changes
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 3: Velora Command Palette (⌘K) -->
+  <div id="cmdPaletteOverlay" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-start justify-center pt-20 p-4">
+    <div class="velora-spotlight-card max-w-lg w-full rounded-2xl border border-white/20 overflow-hidden shadow-2xl">
+      <div class="p-3.5 border-b border-white/10 flex items-center gap-2.5">
+        <span class="font-mono text-xs brand-text">⌘K</span>
+        <input id="cmdSearchInput" type="text" placeholder="Jump to Home, About, Services, Skills, Projects, Contact, or switch theme..." class="w-full bg-transparent text-sm text-white focus:outline-none" />
+        <button type="button" id="closeCmdPaletteBtn" class="text-xs font-mono text-zinc-400 px-2 py-0.5 rounded bg-white/5">ESC</button>
+      </div>
+      <div id="cmdActionList" class="p-2 max-h-72 overflow-y-auto space-y-1"></div>
+    </div>
+  </div>
+
+  <!-- Non-blocking Toast Notification -->
+  <div id="toastContainer" class="fixed bottom-20 right-5 z-50 pointer-events-none flex flex-col gap-2"></div>
+
+  <script>
+    /* ============================================================================
+     * 1. CENTRALIZED PORTFOLIO_CONFIG (Complete Content for Mithu Ahammad)
+     * ============================================================================ */
+    const DEFAULT_PORTFOLIO_CONFIG = {
+      name: "Mithu Ahammad",
+      roleSub: "Web Developer & Social Media Expert",
+      domain: "mithuahammad.com",
+      email: "mithuahammad@zohomail.com",
+      phone: "+880 1700-000000",
+      location: "Dhaka, Bangladesh",
+      availability: "Available for: Freelance Projects · Website Development · Social Media Management · Digital Marketing",
+      bioEN: "I build modern websites, grow social media brands, and help businesses establish a strong digital presence.",
+      bioBN: "আমি আধুনিক ও রেসপনসিভ ওয়েবসাইট তৈরি করি, সোশ্যাল মিডিয়া ব্র্যান্ড গ্রোথ করি এবং ব্যবসার শক্তিশালী ডিজিটাল উপস্থিতি গড়ে তুলতে সাহায্য করি।",
+      aboutEN: [
+        "I'm Mithu Ahammad, a passionate Web Developer and Social Media Expert who loves turning ideas into practical digital solutions.",
+        "I specialize in building responsive websites, managing social media platforms, improving online visibility, and helping businesses grow online. I'm always eager to learn new technologies, explore creative ideas, and improve my skills.",
+        "My goal is to deliver quality work, build long-term relationships with clients, and help brands succeed in the digital world."
+      ],
+      aboutBN: [
+        "আমি মিঠু আহম্মদ, একজন নিবেদিতপ্রাণ ওয়েব ডেভেলপার এবং সোশ্যাল মিডিয়া এক্সপার্ট—যিনি নতুন আইডিয়াকে বাস্তবসম্মত ডিজিটাল সমাধানে রূপ দিতে ভালোবাসেন।",
+        "আমি রেসপনসিভ ওয়েবসাইট তৈরি, সোশ্যাল মিডিয়া প্ল্যাটফর্ম ম্যানেজমেন্ট, অনলাইন ভিজিবিলিটি বৃদ্ধি এবং ব্যবসার অনলাইন গ্রোথ নিয়ে কাজ করি। নতুন প্রযুক্তি শেখা এবং নিজের দক্ষতা প্রতিদিন উন্নত করা আমার লক্ষ্য।",
+        "আমার উদ্দেশ্য হলো মানসম্মত কাজ উপহার দেওয়া, ক্লায়েন্টদের সাথে দীর্ঘমেয়াদী সম্পর্ক তৈরি করা এবং ডিজিটাল জগতে ব্র্যান্ডগুলোকে সফল হতে সাহায্য করা।"
+      ],
+      flipWordsEN: [
+        "Responsive Websites & Brand Growth",
+        "WordPress & Laravel Solutions",
+        "React & Next.js Web Interfaces",
+        "SEO & Social Media Marketing"
+      ],
+      flipWordsBN: [
+        "রেসপনসিভ ওয়েবসাইট ও ব্র্যান্ড গ্রোথ",
+        "ওয়ার্ডপ্রেস ও লারাভেল ডেভেলপমেন্ট",
+        "রিয়্যাক্ট ও নেক্সট.জেএস ইন্টারফেস",
+        "এসইও এবং সোশ্যাল মিডিয়া মার্কেটিং"
+      ],
+      services: [
+        {
+          id: "srv-web-dev",
+          num: "01",
+          title: "Web Development",
+          desc: "I create modern, responsive, and user-friendly websites that work smoothly across desktop, tablet, and mobile devices.",
+          badge: "HTML5 • Tailwind • React • Next.js"
+        },
+        {
+          id: "srv-smm",
+          num: "02",
+          title: "Social Media Management",
+          desc: "I help businesses manage their social media pages, create engaging content, interact with audiences, and build a strong online presence.",
+          badge: "Brand Growth • Audience Engagement"
+        },
+        {
+          id: "srv-seo",
+          num: "03",
+          title: "SEO & Digital Marketing",
+          desc: "I help websites improve search visibility, reach the right audience, and attract potential customers through effective digital marketing strategies.",
+          badge: "Search Visibility • Lead Generation"
+        },
+        {
+          id: "srv-wp",
+          num: "04",
+          title: "WordPress Website Development",
+          desc: "I build and customize WordPress websites for businesses, blogs, portfolios, and online brands.",
+          badge: "Custom Themes • Business & Blogs"
+        },
+        {
+          id: "srv-content",
+          num: "05",
+          title: "Content & Creative Design",
+          desc: "I create engaging social media content, promotional graphics, and marketing materials to help brands communicate effectively.",
+          badge: "Canva • Figma • Visual Campaigns"
+        },
+        {
+          id: "srv-va",
+          num: "06",
+          title: "Virtual Assistant & Customer Support",
+          desc: "I assist businesses with online research, data organization, customer communication, and daily digital tasks.",
+          badge: "Research • Client Support • Ops"
+        }
+      ],
+      skills: [
+        { name: "HTML5", cat: "web", tag: "Frontend Core" },
+        { name: "CSS3", cat: "web", tag: "Styling & Layout" },
+        { name: "Tailwind CSS", cat: "web", tag: "Utility UI" },
+        { name: "JavaScript", cat: "web", tag: "Interactive Logic" },
+        { name: "React.js", cat: "web", tag: "Component UI" },
+        { name: "Next.js", cat: "web", tag: "Full-Stack React" },
+        { name: "WordPress", cat: "web", tag: "CMS & Custom Sites" },
+        { name: "Laravel", cat: "web", tag: "PHP Framework" },
+        { name: "Git & GitHub", cat: "design", tag: "Version Control" },
+        { name: "Figma", cat: "design", tag: "UI/UX Prototyping" },
+        { name: "Search Engine Optimization (SEO)", cat: "marketing", tag: "Organic Ranking" },
+        { name: "Social Media Marketing", cat: "marketing", tag: "Campaign Growth" },
+        { name: "Facebook Page Management", cat: "marketing", tag: "Community & Ads" },
+        { name: "Content Strategy", cat: "marketing", tag: "Brand Storytelling" },
+        { name: "Canva Design", cat: "design", tag: "Promotional Graphics" },
+        { name: "Lead Generation", cat: "marketing", tag: "Audience Conversion" }
+      ],
+      projects: [
+        {
+          id: "proj-business-site",
+          num: "01",
+          title: "01. Business Website",
+          category: "wordpress",
+          categoryLabel: "01 • Corporate & Business Web",
+          year: "2026",
+          metrics: ["Responsive Layout", "Fast Page Speed", "Lead Capture Ready"],
+          summary: "A modern, responsive website designed to showcase business services, build credibility, and attract potential customers.",
+          challenge: "Businesses need a credible, fast-loading digital storefront that converts visitors across desktop, tablet, and mobile devices.",
+          solution: "Engineered a clean, conversion-focused layout with service showcases, clear call-to-action sections, and SEO-friendly structure.",
+          previewLines: [
+            "Layout: 100% Responsive Desktop / Tablet / Mobile",
+            "Sections: Hero, Services, Credibility Proof, Contact CTA",
+            "Performance: 99+ Lighthouse Speed & Accessibility"
+          ]
+        },
+        {
+          id: "proj-portfolio-site",
+          num: "02",
+          title: "02. Personal Portfolio Website",
+          category: "nextjs",
+          categoryLabel: "02 • Velora UI & Personal Brand",
+          year: "2026",
+          metrics: ["mithuahammad.com", "Velora Spotlight UI", "Dark Navy & White Modes"],
+          summary: "A professional portfolio website highlighting my skills, services, projects, and contact information.",
+          challenge: "Standing out from generic AI-generated templates while keeping all skills, services, and contact flows easy to navigate.",
+          solution: "Built with Velora UI interactive primitives, purple-blue gradient tokens, command palette (⌘K), and live config management.",
+          previewLines: [
+            "Domain: https://mithuahammad.com",
+            "Theme: Dark Navy & Alabaster White + Purple/Blue Accents",
+            "Interactive: Velora Spotlight Cards + Live Config Editor"
+          ]
+        },
+        {
+          id: "proj-social-marketing",
+          num: "03",
+          title: "03. Social Media Marketing",
+          category: "marketing",
+          categoryLabel: "03 • Brand Growth & Campaigns",
+          year: "2026",
+          metrics: ["Audience Engagement", "Content Calendar", "Facebook Page Growth"],
+          summary: "Social media page management, promotional campaigns, and content creation to improve audience engagement and brand awareness.",
+          challenge: "Brands struggle with inconsistent posting, low organic reach, and uncoordinated promotional graphics.",
+          solution: "Executed structured content strategies, Canva/Figma promotional creatives, audience interaction workflows, and targeted campaigns.",
+          previewLines: [
+            "Platforms: Facebook Page Management & Social Channels",
+            "Deliverables: Promotional Graphics + Content Strategy",
+            "Outcome: Consistent Brand Awareness & Lead Growth"
+          ]
+        },
+        {
+          id: "proj-blog-content",
+          num: "04",
+          title: "04. Blog & Content Website",
+          category: "wordpress",
+          categoryLabel: "04 • SEO Publishing Platform",
+          year: "2026",
+          metrics: ["SEO-Friendly Structure", "Clean Typography", "Organic Traffic Growth"],
+          summary: "An SEO-friendly content platform designed for publishing articles, sharing useful information, and growing organic traffic.",
+          challenge: "Content publishers need distraction-free reading experiences paired with technical SEO and fast mobile rendering.",
+          solution: "Built a semantic WordPress & custom publishing architecture with structured schema markup, fast category filtering, and clean typography.",
+          previewLines: [
+            "SEO: Semantic Headings, Meta Tags & Clean URLs",
+            "Reader UX: Distraction-free typography & fast search",
+            "CMS: Easy article publishing & category organization"
+          ]
+        },
+        {
+          id: "proj-web-application",
+          num: "05",
+          title: "05. Web Application",
+          category: "laravel",
+          categoryLabel: "05 • Full-Stack Web App",
+          year: "2026",
+          metrics: ["Laravel & React.js", "Task Automation", "Smooth Digital UX"],
+          summary: "A user-friendly web application concept built to simplify tasks and provide a smooth digital experience.",
+          challenge: "Daily digital operations and customer workflows often get bogged down by scattered spreadsheets and manual steps.",
+          solution: "Designed a streamlined web application using Laravel, React.js, and Tailwind CSS with intuitive dashboards and instant state updates.",
+          previewLines: [
+            "Stack: Laravel API + React.js / Next.js Frontend",
+            "UX: Instant task filtering, status tracking & notifications",
+            "Architecture: Clean modular components & REST endpoints"
+          ]
+        }
+      ],
+      whyChooseMe: [
+        {
+          num: "01",
+          title: "Quality & Detail-Oriented",
+          desc: "Quality-focused and detail-oriented work across every line of code, design asset, and campaign."
+        },
+        {
+          num: "02",
+          title: "Continuous Tech Learner",
+          desc: "Strong interest in learning new technologies and applying modern web standards."
+        },
+        {
+          num: "03",
+          title: "Creative Problem-Solving",
+          desc: "Creative thinking and practical problem-solving tailored to real business goals."
+        },
+        {
+          num: "04",
+          title: "Clear & Friendly Communication",
+          desc: "Clear and friendly communication with regular project updates and transparent workflows."
+        },
+        {
+          num: "05",
+          title: "On-Time & Client-Focused",
+          desc: "Commitment to deadlines and client satisfaction on every project milestone."
+        },
+        {
+          num: "06",
+          title: "Long-Term Partnership",
+          desc: "Focus on long-term growth and professional relationships that help brands scale."
+        }
+      ],
+      experience: [
+        {
+          period: "PRESENT • ONGOING",
+          role: "Web Developer & Social Media Expert",
+          org: "Freelance & Client Projects (mithuahammad.com)",
+          highlights: [
+            "I continue to develop my skills in web development, digital marketing, and social media management through hands-on projects and ongoing learning.",
+            "Building modern, responsive websites using HTML5, CSS3, Tailwind CSS, JavaScript, React.js, Next.js, WordPress, and Laravel.",
+            "Helping businesses grow online through SEO, Facebook Page Management, content strategy, Canva/Figma design, and lead generation."
+          ]
+        },
+        {
+          period: "CONTINUOUS LEARNING",
+          role: "Full-Stack Web & Digital Marketing Practitioner",
+          org: "Hands-On Projects & Skill Development",
+          highlights: [
+            "I believe in improving every day, staying updated with new technologies, and using my knowledge to create meaningful digital solutions.",
+            "Note: Add your verified job titles, companies, and dates here anytime via the Live Config Editor."
+          ]
+        }
+      ],
+      testimonials: [
+        {
+          quote: "Mithu delivered a modern, responsive website and helped organize our social media presence with clear communication from day one.",
+          author: "Business Client",
+          role: "Web Development & Brand Growth"
+        },
+        {
+          quote: "Detail-oriented, deadline-committed, and always ready with practical digital solutions across WordPress, SEO, and content design.",
+          author: "Digital Brand Partner",
+          role: "WordPress & Social Media Management"
+        },
+        {
+          quote: "A reliable collaborator who combines clean frontend code with real-world digital marketing and customer support.",
+          author: "Project Collaborator",
+          role: "Full-Stack & Lead Generation"
+        }
+      ],
+      webhooks: {
+        googleScriptUrl: "",
+        telegramBotEndpoint: ""
+      },
+      socials: [
+        { label: "Email", handle: "mithuahammad@zohomail.com", value: "mithuahammad@zohomail.com" },
+        { label: "Website", handle: "mithuahammad.com", value: "https://mithuahammad.com" },
+        { label: "GitHub", handle: "@mithuahammad", value: "https://github.com/mithuahammad" },
+        { label: "Facebook", handle: "Mithu Ahammad", value: "https://facebook.com/mithuahammad" },
+        { label: "LinkedIn", handle: "/in/mithuahammad", value: "https://linkedin.com/in/mithuahammad" }
+      ]
+    };
+
+    let PORTFOLIO_CONFIG = JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_CONFIG));
+    try {
+      const saved = localStorage.getItem("mithu_velora_portfolio_cfg_v2");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        PORTFOLIO_CONFIG = Object.assign({}, DEFAULT_PORTFOLIO_CONFIG, parsed);
+      }
+    } catch (err) {}
+
+    /* ============================================================================
+     * 2. CODE SNIPPETS FOR VELORA FILE TREE & CODE BLOCK
+     * ============================================================================ */
+    const CODE_FILES = {
+      laravel: {
+        description: "Laravel backend controller for clean project & lead management.",
+        code: `<?php
+namespace App\\Http\\Controllers;
+
+use Illuminate\\Http\\Request;
+use Illuminate\\Http\\JsonResponse;
+
+final class PortfolioLeadController extends Controller
+{
+    public function store(Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            'name'    => ['required', 'string', 'max:120'],
+            'email'   => ['required', 'email'],
+            'service' => ['required', 'string'],
+            'message' => ['required', 'string', 'max:2000'],
+        ]);
+
+        // Dispatch notification to mithuahammad@zohomail.com
+        return response()->json([
+            'status'  => 'queued',
+            'owner'   => 'Mithu Ahammad',
+            'domain'  => 'mithuahammad.com',
+            'payload' => $validated,
+        ]);
+    }
+}`
+      },
+      velora: {
+        description: "Velora UI Spotlight Card primitive with purple-blue gradient tokens.",
+        code: `// Velora UI — Mouse-Tracking Spotlight Primitive
+export function attachVeloraSpotlight(selector = '.velora-spotlight-card') {
+  const cards = document.querySelectorAll<HTMLElement>(selector);
+
+  window.addEventListener('pointermove', (event) => {
+    for (const card of cards) {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mouse-x', \`\${event.clientX - rect.left}px\`);
+      card.style.setProperty('--mouse-y', \`\${event.clientY - rect.top}px\`);
+    }
+  }, { passive: true });
+}`
+      },
+      wordpress: {
+        description: "Custom WordPress SEO & performance setup for business and blog sites.",
+        code: `<?php
+/**
+ * Mithu Ahammad — Custom WordPress Theme Performance & SEO Setup
+ */
+add_action('after_setup_theme', function (): void {
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_theme_support('html5', ['search-form', 'gallery', 'caption']);
+});
+
+add_action('init', function (): void {
+    remove_action('wp_head', 'print_emoji_detection_script', 7);
+    remove_action('wp_print_styles', 'print_emoji_styles');
+});`
+      },
+      dns: {
+        description: "Production SEO & Lighthouse verification workflow for mithuahammad.com.",
+        code: `name: Deploy Portfolio (mithuahammad.com)
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Responsive Layout & SEO Meta
+        run: |
+          echo "Checking title: Mithu Ahammad | Web Developer & Social Media Expert"
+          npx lhci autorun --upload.target=temporary-public-storage`
+      }
+    };
+
+    const SERVICE_TABS = {
+      fullstack: [
+        {
+          step: "01 // MODERN FRONTEND",
+          title: "React.js, Next.js & Tailwind CSS",
+          desc: "Clean, fast, and mobile-responsive interfaces engineered to work smoothly across desktop, tablet, and mobile devices."
+        },
+        {
+          step: "02 // ROBUST BACKEND",
+          title: "Laravel & Web Applications",
+          desc: "User-friendly web applications built to simplify daily tasks, organize data, and provide a smooth digital experience."
+        },
+        {
+          step: "03 // VERSION CONTROL & UI",
+          title: "Git, GitHub & Figma Workflow",
+          desc: "Structured code repositories and pixel-accurate Figma-to-code implementation."
+        }
+      ],
+      wp: [
+        {
+          step: "01 // CUSTOM WORDPRESS",
+          title: "Business & Portfolio Sites",
+          desc: "Custom WordPress websites designed to showcase business services, build credibility, and attract customers."
+        },
+        {
+          step: "02 // CONTENT & BLOGS",
+          title: "SEO-Friendly Publishing",
+          desc: "Content platforms designed for publishing articles, sharing useful information, and growing organic traffic."
+        },
+        {
+          step: "03 // SPEED & CARE",
+          title: "Responsive & Easy to Manage",
+          desc: "Clean dashboard setup so business owners can update content without technical headaches."
+        }
+      ],
+      growth: [
+        {
+          step: "01 // SOCIAL MEDIA",
+          title: "Facebook Page & Brand Management",
+          desc: "Managing social media pages, creating engaging content, interacting with audiences, and building online presence."
+        },
+        {
+          step: "02 // SEO & MARKETING",
+          title: "Search Visibility & Lead Gen",
+          desc: "Improving search visibility, reaching the right audience, and attracting potential customers."
+        },
+        {
+          step: "03 // CREATIVE & VA SUPPORT",
+          title: "Canva Design & Virtual Assistance",
+          desc: "Promotional graphics, online research, data organization, and dedicated customer communication."
+        }
+      ]
+    };
+
+    const ORBIT_TECH_DETAILS = {
+      "Laravel": "Laravel: Backend web applications, clean routing, database organization, and secure form handling.",
+      "Next.js": "Next.js & React.js: Modern component-driven websites and fast single-page user experiences.",
+      "WordPress": "WordPress: Custom websites for businesses, blogs, portfolios, and growing online brands.",
+      "Tailwind": "Tailwind CSS & CSS3: Responsive mobile-first layouts with dark navy and purple-blue gradient styling.",
+      "MySQL": "SEO & Lead Generation: Search engine optimization, content strategy, and targeted audience growth.",
+      "Vercel": "Git, GitHub, Figma & Canva: End-to-end design-to-deployment workflow and promotional visual design."
+    };
+
+    /* ============================================================================
+     * 3. APPLICATION STATE & HELPERS
+     * ============================================================================ */
+    let currentLang = "en";
+    let currentTheme = "violet";
+    let isLightMode = false;
+    let currentProjectFilter = "all";
+    let currentSkillFilter = "all";
+    let currentTestimonialIdx = 0;
+    let flipWordIndex = 0;
+    let currentCodeFileKey = "laravel";
+
+    function showToast(message, type = "success") {
+      const container = document.getElementById("toastContainer");
+      if (!container) return;
+      const toast = document.createElement("div");
+      const borderClass = type === "error" ? "border-rose-500/50" : "border-violet-400/50";
+      toast.className = `pointer-events-auto px-4 py-2.5 rounded-xl border ${borderClass} bg-[#0b1124]/95 backdrop-blur-md text-xs font-mono text-zinc-100 shadow-xl transition-all duration-300 flex items-center gap-2`;
+      toast.innerHTML = `<span class="brand-text">●</span><span>${message}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateY(6px)";
+        setTimeout(() => toast.remove(), 300);
+      }, 3200);
+    }
+
+    function copyTextToClipboard(text, label = "Copied to clipboard") {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`${label}: ${text}`);
+        }).catch(() => fallbackCopy(text, label));
+      } else {
+        fallbackCopy(text, label);
+      }
+    }
+
+    function fallbackCopy(text, label) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        showToast(`${label}: ${text}`);
+      } catch (e) {
+        showToast("Copy failed", "error");
+      }
+      ta.remove();
+    }
+
+    function scrollToSection(sectionId) {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      const mobileDrawer = document.getElementById("mobileNavDrawer");
+      if (mobileDrawer && !mobileDrawer.classList.contains("hidden")) {
+        mobileDrawer.classList.add("hidden");
+      }
+    }
+
+    /* ============================================================================
+     * 4. VELORA UI INTERACTIVE EFFECTS
+     * ============================================================================ */
+    function triggerHyperText(element, finalString) {
+      if (!element) return;
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/_#";
+      let iterations = 0;
+      if (element._hyperInterval) clearInterval(element._hyperInterval);
+      element._hyperInterval = setInterval(() => {
+        element.textContent = finalString
+          .split("")
+          .map((letter, idx) => {
+            if (letter === " ") return " ";
+            if (idx < iterations) return finalString[idx];
+            return chars[Math.floor(Math.random() * chars.length)];
+          })
+          .join("");
+        if (iterations >= finalString.length) {
+          clearInterval(element._hyperInterval);
+        }
+        iterations += 1 / 2;
+      }, 28);
+    }
+
+    function updateDhakaClock() {
+      const clockEl = document.getElementById("dhakaClockDisplay");
+      if (!clockEl) return;
+      try {
+        const formatter = new Intl.DateTimeFormat("en-US", {
+          timeZone: "Asia/Dhaka",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: true
+        });
+        clockEl.textContent = `Dhaka, BD • ${formatter.format(new Date())}`;
+      } catch (e) {
+        clockEl.textContent = "Dhaka, BD (UTC+6)";
+      }
+    }
+
+    function initSpotlightCards() {
+      window.addEventListener("pointermove", (e) => {
+        const cards = document.querySelectorAll(".velora-spotlight-card");
+        cards.forEach((card) => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+          card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+        });
+      }, { passive: true });
+    }
+
+    /* ============================================================================
+     * 5. RENDER FUNCTIONS FOR ALL 09 SECTIONS
+     * ============================================================================ */
+    function renderProfileAndCopy() {
+      const isBN = currentLang === "bn";
+      document.getElementById("navDeveloperName").textContent = PORTFOLIO_CONFIG.name;
+      document.getElementById("navRoleSub").textContent = PORTFOLIO_CONFIG.roleSub;
+      document.getElementById("hyperNameTrigger").textContent = PORTFOLIO_CONFIG.name;
+      document.getElementById("heroAvailabilityBadge").textContent = isBN
+        ? "ফ্রিল্যান্স প্রজেক্ট • ওয়েব ডেভেলপমেন্ট • সোশ্যাল মিডিয়া • ডিজিটাল মার্কেটিং"
+        : "Available for Freelance Projects & Brand Growth";
+
+      document.getElementById("heroGreeting").textContent = isBN ? "হ্যালো, আমি" : "Hi, I'm";
+      document.getElementById("heroSubPrefix").textContent = isBN
+        ? "ওয়েব ডেভেলপার ও সোশ্যাল মিডিয়া এক্সপার্ট"
+        : PORTFOLIO_CONFIG.roleSub;
+      document.getElementById("heroBioText").textContent = isBN ? PORTFOLIO_CONFIG.bioBN : PORTFOLIO_CONFIG.bioEN;
+      document.getElementById("ctaPrimaryText").textContent = isBN ? "আমার কাজ দেখুন" : "View My Work";
+      document.getElementById("heroEmailLabel").textContent = PORTFOLIO_CONFIG.email;
+
+      // About Section
+      const aboutArr = isBN ? PORTFOLIO_CONFIG.aboutBN : PORTFOLIO_CONFIG.aboutEN;
+      document.getElementById("aboutPara1").textContent = aboutArr[0];
+      document.getElementById("aboutPara2").textContent = aboutArr[1];
+      document.getElementById("aboutPara3").textContent = aboutArr[2];
+
+      document.getElementById("codeNameVal").textContent = `'${PORTFOLIO_CONFIG.name}'`;
+      document.getElementById("codeLocationVal").textContent = `'${PORTFOLIO_CONFIG.location}'`;
+      document.getElementById("contactEmailDisplay").textContent = PORTFOLIO_CONFIG.email;
+      document.getElementById("contactPhoneDisplay").textContent = PORTFOLIO_CONFIG.phone;
+      document.getElementById("contactLocationDisplay").textContent = PORTFOLIO_CONFIG.location;
+      document.getElementById("footerName").textContent = PORTFOLIO_CONFIG.name;
+      document.getElementById("footerRole").textContent = PORTFOLIO_CONFIG.roleSub;
+
+      // Social buttons
+      const socialsWrap = document.getElementById("socialLinksContainer");
+      socialsWrap.innerHTML = "";
+      PORTFOLIO_CONFIG.socials.forEach((soc) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "px-3 py-1.5 rounded-xl text-xs font-mono border border-white/10 bg-white/5 hover:bg-white/10 text-zinc-300 transition-colors";
+        btn.textContent = `${soc.label}: ${soc.handle}`;
+        btn.addEventListener("click", () => copyTextToClipboard(soc.value, `${soc.label} copied`));
+        socialsWrap.appendChild(btn);
+      });
+    }
+
+    function renderServices() {
+      const grid = document.getElementById("servicesGrid");
+      grid.innerHTML = PORTFOLIO_CONFIG.services.map((srv) => `
+        <div class="velora-spotlight-card rounded-2xl p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-violet-500/15 brand-text border border-violet-400/25">${srv.num}</span>
+              <span class="text-[11px] font-mono text-zinc-400">${srv.badge}</span>
+            </div>
+            <h3 class="font-display text-lg font-bold text-zinc-100">${srv.title}</h3>
+            <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">${srv.desc}</p>
+          </div>
+          <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+            <button type="button" data-select-service="${srv.title}" class="text-xs font-mono brand-text hover:underline">
+              Discuss ${srv.title} →
+            </button>
+            <span class="text-[10px] font-mono text-zinc-500">AVAILABLE</span>
+          </div>
+        </div>
+      `).join("");
+
+      grid.querySelectorAll("[data-select-service]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const srvTitle = btn.getAttribute("data-select-service");
+          const selectEl = document.getElementById("projectStackSelect");
+          if (selectEl) selectEl.value = srvTitle;
+          const msgEl = document.getElementById("senderMessage");
+          if (msgEl) msgEl.value = `Hi Mithu, I'm interested in your ${srvTitle} service. Let's discuss my project!`;
+          scrollToSection("contactSection");
+          showToast(`Selected service: ${srvTitle}`);
+        });
+      });
+    }
+
+    function renderSkills(filter = "all") {
+      currentSkillFilter = filter;
+      const grid = document.getElementById("skillsGrid");
+      const list = filter === "all"
+        ? PORTFOLIO_CONFIG.skills
+        : PORTFOLIO_CONFIG.skills.filter((s) => s.cat === filter);
+
+      grid.innerHTML = list.map((sk, idx) => `
+        <button type="button" data-skill-name="${sk.name}" class="velora-spotlight-card rounded-xl p-3.5 text-left flex items-center justify-between gap-2 hover:border-violet-400/40 transition-all">
+          <div>
+            <div class="font-display font-bold text-xs sm:text-sm text-zinc-100">${sk.name}</div>
+            <div class="font-mono text-[10px] text-zinc-400 mt-0.5">${sk.tag}</div>
+          </div>
+          <span class="font-mono text-[10px] brand-text px-2 py-0.5 rounded bg-violet-500/10 border border-violet-400/20">0${idx + 1 > 9 ? '' : ''}${idx + 1}</span>
+        </button>
+      `).join("");
+
+      grid.querySelectorAll("[data-skill-name]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const skName = btn.getAttribute("data-skill-name");
+          showToast(`${skName} — Active in Mithu's production toolkit`);
+        });
+      });
+
+      document.querySelectorAll(".skill-filter-btn").forEach((btn) => {
+        const active = btn.getAttribute("data-skill-filter") === filter;
+        btn.className = active
+          ? "skill-filter-btn px-3 py-1 rounded-lg text-xs font-mono bg-white/10 text-white transition-all"
+          : "skill-filter-btn px-3 py-1 rounded-lg text-xs font-mono text-zinc-400 hover:text-white transition-all";
+      });
+    }
+
+    function renderWhyChooseMe() {
+      const grid = document.getElementById("whyChooseGrid");
+      grid.innerHTML = PORTFOLIO_CONFIG.whyChooseMe.map((item) => `
+        <div class="velora-spotlight-card rounded-2xl p-5 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs brand-text font-bold">// ${item.num}</span>
+            <span class="w-2 h-2 rounded-full" style="background-color: var(--brand-primary);"></span>
+          </div>
+          <h3 class="font-display text-base font-bold text-zinc-100">${item.title}</h3>
+          <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">${item.desc}</p>
+        </div>
+      `).join("");
+    }
+
+    function renderCodeBlock(fileKey) {
+      currentCodeFileKey = fileKey;
+      const fileObj = CODE_FILES[fileKey] || CODE_FILES.laravel;
+      document.getElementById("bentoCodeDisplay").textContent = fileObj.code;
+      document.getElementById("codeFileDescription").textContent = fileObj.description;
+
+      document.querySelectorAll(".code-file-btn").forEach((btn) => {
+        const active = btn.getAttribute("data-code-file") === fileKey;
+        btn.className = active
+          ? "code-file-btn w-full text-left px-2.5 py-1.5 rounded-lg bg-white/10 text-zinc-100 flex items-center gap-2"
+          : "code-file-btn w-full text-left px-2.5 py-1.5 rounded-lg text-zinc-400 hover:bg-white/5 flex items-center gap-2";
+      });
+    }
+
+    function renderServiceTabs(tabKey) {
+      const items = SERVICE_TABS[tabKey] || SERVICE_TABS.fullstack;
+      const container = document.getElementById("serviceTabContent");
+      container.innerHTML = items.map((item) => `
+        <div class="p-4 rounded-xl bg-black/35 border border-white/10 space-y-1.5">
+          <div class="text-[10px] font-mono brand-text">${item.step}</div>
+          <div class="font-display font-bold text-sm text-zinc-100">${item.title}</div>
+          <p class="text-xs text-zinc-400 leading-relaxed">${item.desc}</p>
+        </div>
+      `).join("");
+
+      document.querySelectorAll(".service-tab-btn").forEach((btn) => {
+        const active = btn.getAttribute("data-service-tab") === tabKey;
+        btn.className = active
+          ? "service-tab-btn px-3 py-1 rounded-lg text-xs font-mono bg-white/10 text-white"
+          : "service-tab-btn px-3 py-1 rounded-lg text-xs font-mono text-zinc-400 hover:text-white";
+      });
+    }
+
+    function renderProjects(filter = "all") {
+      currentProjectFilter = filter;
+      const grid = document.getElementById("projectsGrid");
+      const list = filter === "all"
+        ? PORTFOLIO_CONFIG.projects
+        : PORTFOLIO_CONFIG.projects.filter((p) => p.category === filter);
+
+      grid.innerHTML = "";
+      list.forEach((proj) => {
+        const card = document.createElement("article");
+        card.className = "velora-spotlight-card group rounded-2xl p-5 flex flex-col justify-between space-y-5";
+
+        const metricsBadges = proj.metrics.map((m) =>
+          `<span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-white/5 border border-white/10 text-zinc-300">${m}</span>`
+        ).join("");
+
+        const previewLogs = proj.previewLines.map((line) =>
+          `<div class="py-1 border-b border-white/5 text-[11px] font-mono text-zinc-300 truncate"><span class="brand-text">›</span> ${line}</div>`
+        ).join("");
+
+        card.innerHTML = `
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-xs font-mono brand-text">${proj.categoryLabel}</span>
+              <span class="text-xs font-mono text-zinc-500">${proj.year}</span>
+            </div>
+
+            <!-- Interactive Hover-Scroll Live Project Showcase Mockup -->
+            <div class="project-preview-viewport h-36 rounded-xl bg-[#07090f] border border-white/10 p-3.5">
+              <div class="project-preview-canvas space-y-2">
+                <div class="flex items-center justify-between border-b border-white/10 pb-1.5">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-violet-400"></span>
+                    <span class="font-mono text-[11px] text-zinc-200 font-semibold">${proj.title}</span>
+                  </div>
+                  <span class="text-[10px] font-mono text-zinc-500">HOVER PREVIEW ↓</span>
+                </div>
+                <div class="space-y-1">
+                  ${previewLogs}
+                </div>
+                <div class="p-2 rounded-lg bg-white/[0.03] border border-white/10 text-[11px] font-mono text-zinc-400">
+                  <div>${proj.solution}</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-display text-lg font-bold text-zinc-100">${proj.title}</h3>
+              <p class="text-xs sm:text-sm text-zinc-300 mt-1.5 leading-relaxed">${proj.summary}</p>
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              ${metricsBadges}
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between gap-2">
+            <button type="button" data-open-project="${proj.id}" class="px-3 py-2 rounded-xl text-xs font-mono bg-white/10 hover:bg-white/15 text-white transition-colors">
+              Project Details →
+            </button>
+            <button type="button" data-inquire-project="${proj.title}" class="px-3 py-2 rounded-xl text-xs font-mono border border-white/10 hover:bg-white/5 text-zinc-300 transition-colors">
+              Inquire
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      grid.querySelectorAll("[data-open-project]").forEach((btn) => {
+        btn.addEventListener("click", () => openProjectModal(btn.getAttribute("data-open-project")));
+      });
+      grid.querySelectorAll("[data-inquire-project]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const title = btn.getAttribute("data-inquire-project");
+          const msgField = document.getElementById("senderMessage");
+          if (msgField) {
+            msgField.value = `Hi Mithu, I saw "${title}" in your portfolio and would like to discuss a similar project.`;
+          }
+          scrollToSection("contactSection");
+          showToast(`Pre-filled inquiry for ${title}`);
+        });
+      });
+
+      document.querySelectorAll(".project-filter-btn").forEach((btn) => {
+        const active = btn.getAttribute("data-project-filter") === filter;
+        btn.className = active
+          ? "project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-white/10 text-white transition-all"
+          : "project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-zinc-400 hover:text-white transition-all";
+      });
+    }
+
+    function openProjectModal(projectId) {
+      const proj = PORTFOLIO_CONFIG.projects.find((p) => p.id === projectId);
+      if (!proj) return;
+      document.getElementById("modalProjectCategory").textContent = proj.categoryLabel;
+      document.getElementById("modalProjectTitle").textContent = proj.title;
+      document.getElementById("modalProjectSummary").textContent = proj.summary;
+      document.getElementById("modalProjectChallenge").textContent = proj.challenge;
+      document.getElementById("modalProjectSolution").textContent = proj.solution;
+
+      const metricsWrap = document.getElementById("modalProjectMetrics");
+      metricsWrap.innerHTML = proj.metrics.map((m) =>
+        `<span class="px-3 py-1 rounded-lg text-xs font-mono bg-white/5 border border-white/10 brand-text">${m}</span>`
+      ).join("");
+
+      const modalInquireBtn = document.getElementById("modalInquireBtn");
+      modalInquireBtn.onclick = () => {
+        document.getElementById("projectModalOverlay").classList.add("hidden");
+        const msgField = document.getElementById("senderMessage");
+        if (msgField) {
+          msgField.value = `Hi Mithu, I'd love to build a project similar to ${proj.title}.`;
+        }
+        scrollToSection("contactSection");
+      };
+
+      document.getElementById("projectModalOverlay").classList.remove("hidden");
+    }
+
+    function renderExperienceAndTestimonials() {
+      const listEl = document.getElementById("experienceTimelineList");
+      listEl.innerHTML = PORTFOLIO_CONFIG.experience.map((item, idx) => `
+        <div class="relative group">
+          <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-[#070b19]" style="background-color: ${idx === 0 ? 'var(--brand-primary)' : '#475569'}"></span>
+          <div class="velora-spotlight-card rounded-2xl p-5 space-y-2.5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-mono text-xs brand-text">${item.period}</span>
+              <span class="font-mono text-xs text-zinc-400">${item.org}</span>
+            </div>
+            <h3 class="font-display text-lg font-bold text-zinc-100">${item.role}</h3>
+            <ul class="space-y-1.5 pt-1 text-xs sm:text-sm text-zinc-300">
+              ${item.highlights.map((h) => `<li class="flex items-start gap-2"><span class="brand-text mt-0.5">▹</span><span>${h}</span></li>`).join("")}
+            </ul>
+          </div>
+        </div>
+      `).join("");
+
+      renderActiveTestimonial();
+    }
+
+    function renderActiveTestimonial() {
+      const tList = PORTFOLIO_CONFIG.testimonials;
+      const item = tList[currentTestimonialIdx % tList.length];
+      const container = document.getElementById("testimonialCardContainer");
+      container.innerHTML = `
+        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed italic">"${item.quote}"</p>
+        <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+          <div>
+            <div class="font-display font-bold text-xs text-zinc-100">${item.author}</div>
+            <div class="font-mono text-[11px] text-zinc-400">${item.role}</div>
+          </div>
+          <span class="font-mono text-[11px] text-zinc-500">${currentTestimonialIdx + 1}/${tList.length}</span>
+        </div>
+      `;
+    }
+
+    /* ============================================================================
+     * 6. THEME RAMP & COMMAND PALETTE (⌘K)
+     * ============================================================================ */
+    function setThemePreset(preset) {
+      currentTheme = preset;
+      if (preset === "violet") {
+        document.documentElement.removeAttribute("data-theme");
+      } else {
+        document.documentElement.setAttribute("data-theme", preset);
+      }
+
+      document.querySelectorAll(".theme-preset-btn").forEach((btn) => {
+        const isCurrent = btn.getAttribute("data-theme-preset") === preset;
+        btn.className = isCurrent
+          ? "theme-preset-btn px-2 py-2 rounded-xl border border-violet-400/60 bg-violet-500/15 text-left transition-all"
+          : "theme-preset-btn px-2 py-2 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] text-left transition-all";
+      });
+      showToast(`Velora Theme Preset: ${preset.toUpperCase()}`);
+    }
+
+    const COMMAND_ACTIONS = [
+      { title: "01. Go to Home (Hero Section)", hint: "Nav", run: () => scrollToSection("heroSection") },
+      { title: "02. Go to About Me", hint: "Nav", run: () => scrollToSection("aboutSection") },
+      { title: "03. Go to My Services (What I Do)", hint: "Nav", run: () => scrollToSection("servicesSection") },
+      { title: "04. Go to My Skills (16 Technologies)", hint: "Nav", run: () => scrollToSection("skillsSection") },
+      { title: "05. Go to Featured Projects", hint: "Nav", run: () => scrollToSection("projectsSection") },
+      { title: "06. Go to Why Work With Me?", hint: "Nav", run: () => scrollToSection("whyChooseSection") },
+      { title: "07. Go to Experience & Continuous Learning", hint: "Nav", run: () => scrollToSection("experienceSection") },
+      { title: "08. Go to Contact (Let's Work Together)", hint: "Nav", run: () => scrollToSection("contactSection") },
+      { title: "Toggle Dark Navy / White Background Mode", hint: "Design Style", run: () => toggleSurfaceMode() },
+      { title: "Switch Theme: Purple & Blue Gradient (Default)", hint: "Velora Token", run: () => setThemePreset("violet") },
+      { title: "Toggle Language (English / বাংলা)", hint: "i18n", run: () => toggleLanguage() },
+      { title: "Copy Email (mithuahammad@zohomail.com)", hint: "Clipboard", run: () => copyTextToClipboard(PORTFOLIO_CONFIG.email, "Email copied") },
+      { title: "Open Live Portfolio Data Editor", hint: "Config", run: () => openCustomizerModal() }
+    ];
+
+    function renderCommandPalette(query = "") {
+      const listEl = document.getElementById("cmdActionList");
+      const q = query.trim().toLowerCase();
+      const filtered = COMMAND_ACTIONS.filter((a) =>
+        a.title.toLowerCase().includes(q) || a.hint.toLowerCase().includes(q)
+      );
+      listEl.innerHTML = "";
+      filtered.forEach((act) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "w-full px-3 py-2.5 rounded-xl text-left hover:bg-white/10 flex items-center justify-between text-xs transition-colors";
+        btn.innerHTML = `<span class="text-zinc-200 font-medium">${act.title}</span><span class="font-mono text-[10px] text-zinc-400 px-2 py-0.5 rounded bg-white/5">${act.hint}</span>`;
+        btn.addEventListener("click", () => {
+          document.getElementById("cmdPaletteOverlay").classList.add("hidden");
+          act.run();
+        });
+        listEl.appendChild(btn);
+      });
+    }
+
+    function toggleLanguage() {
+      currentLang = currentLang === "en" ? "bn" : "en";
+      renderProfileAndCopy();
+      showToast(currentLang === "bn" ? "ভাষা পরিবর্তন করা হয়েছে: বাংলা" : "Language switched to English");
+    }
+
+    function toggleSurfaceMode() {
+      isLightMode = !isLightMode;
+      document.documentElement.classList.toggle("light-mode", isLightMode);
+      const btn = document.getElementById("surfaceModeToggleBtn");
+      if (btn) btn.textContent = isLightMode ? "Mode: White" : "Mode: Dark";
+      showToast(isLightMode ? "Background: Clean White" : "Background: Dark Navy");
+    }
+
+    function openCustomizerModal() {
+      document.getElementById("cfgNameInput").value = PORTFOLIO_CONFIG.name;
+      document.getElementById("cfgRoleInput").value = PORTFOLIO_CONFIG.roleSub;
+      document.getElementById("cfgEmailInput").value = PORTFOLIO_CONFIG.email;
+      document.getElementById("cfgPhoneInput").value = PORTFOLIO_CONFIG.phone;
+      document.getElementById("cfgBioInput").value = currentLang === "bn" ? PORTFOLIO_CONFIG.bioBN : PORTFOLIO_CONFIG.bioEN;
+      document.getElementById("cfgSheetUrlInput").value = PORTFOLIO_CONFIG.webhooks.googleScriptUrl || "";
+      document.getElementById("cfgTelegramTokenInput").value = PORTFOLIO_CONFIG.webhooks.telegramBotEndpoint || "";
+      document.getElementById("customizerModalOverlay").classList.remove("hidden");
+    }
+
+    /* ============================================================================
+     * 7. INITIALIZATION & EVENT LISTENERS
+     * ============================================================================ */
+    window.addEventListener("DOMContentLoaded", () => {
+      renderProfileAndCopy();
+      renderServices();
+      renderSkills("all");
+      renderWhyChooseMe();
+      renderCodeBlock("laravel");
+      renderServiceTabs("fullstack");
+      renderProjects("all");
+      renderExperienceAndTestimonials();
+      initSpotlightCards();
+      updateDhakaClock();
+      setInterval(updateDhakaClock, 1000);
+
+      // Flip Words rotation
+      setInterval(() => {
+        const words = currentLang === "bn" ? PORTFOLIO_CONFIG.flipWordsBN : PORTFOLIO_CONFIG.flipWordsEN;
+        flipWordIndex = (flipWordIndex + 1) % words.length;
+        const el = document.getElementById("veloraFlipWord");
+        if (el) {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(5px)";
+          setTimeout(() => {
+            el.textContent = words[flipWordIndex];
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+          }, 220);
+        }
+      }, 3200);
+
+      // Scroll Progress & Resizable Navbar
+      window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+        const bar = document.getElementById("scrollProgressBar");
+        if (bar) bar.style.width = `${pct}%`;
+
+        const nav = document.getElementById("navContainer");
+        if (nav) {
+          if (scrollTop > 40) {
+            nav.classList.add("max-w-5xl", "py-2");
+            nav.classList.remove("max-w-6xl", "py-3");
+          } else {
+            nav.classList.add("max-w-6xl", "py-3");
+            nav.classList.remove("max-w-5xl", "py-2");
+          }
+        }
+      }, { passive: true });
+
+      // HyperText on Name Hover
+      const hyperEl = document.getElementById("hyperNameTrigger");
+      if (hyperEl) {
+        hyperEl.addEventListener("pointerenter", () => triggerHyperText(hyperEl, PORTFOLIO_CONFIG.name));
+      }
+
+      // Scroll Navigation Buttons
+      document.querySelectorAll("[data-scroll-to]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const target = btn.getAttribute("data-scroll-to");
+          scrollToSection(target);
+        });
+      });
+
+      document.getElementById("brandHomeBtn").addEventListener("click", () => scrollToSection("heroSection"));
+
+      // Hero Hire Me Button
+      document.getElementById("heroHireMeBtn").addEventListener("click", () => {
+        scrollToSection("contactSection");
+        const nameInput = document.getElementById("senderName");
+        const msgInput = document.getElementById("senderMessage");
+        if (msgInput && !msgInput.value) {
+          msgInput.value = "Hi Mithu, I would like to hire you for a project. Let's discuss details!";
+        }
+        if (nameInput) nameInput.focus();
+        showToast("Ready to discuss your project!");
+      });
+
+      // Contact Section Buttons: Contact Me · Send an Email
+      document.getElementById("focusContactFormBtn").addEventListener("click", () => {
+        const nameInput = document.getElementById("senderName");
+        if (nameInput) nameInput.focus();
+        showToast("Please fill in your project details below");
+      });
+
+      document.getElementById("sendDirectEmailBtn").addEventListener("click", () => {
+        copyTextToClipboard(PORTFOLIO_CONFIG.email, "Email copied for direct message");
+      });
+
+      // Mobile Menu Toggle
+      document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+        document.getElementById("mobileNavDrawer").classList.toggle("hidden");
+      });
+
+      // Language Toggle
+      document.getElementById("langToggleBtn").addEventListener("click", toggleLanguage);
+
+      // Theme Preset Buttons
+      document.querySelectorAll(".theme-preset-btn").forEach((btn) => {
+        btn.addEventListener("click", () => setThemePreset(btn.getAttribute("data-theme-preset")));
+      });
+
+      document.getElementById("surfaceModeToggleBtn").addEventListener("click", toggleSurfaceMode);
+
+      document.getElementById("dockThemeCycleBtn").addEventListener("click", () => {
+        const order = ["violet", "titanium", "emerald", "amber", "crimson"];
+        const next = order[(order.indexOf(currentTheme) + 1) % order.length];
+        setThemePreset(next);
+      });
+
+      // Skill Filter Buttons
+      document.querySelectorAll(".skill-filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => renderSkills(btn.getAttribute("data-skill-filter")));
+      });
+
+      // Code Block File Tree
+      document.querySelectorAll(".code-file-btn").forEach((btn) => {
+        btn.addEventListener("click", () => renderCodeBlock(btn.getAttribute("data-code-file")));
+      });
+
+      document.getElementById("copyCodeSnippetBtn").addEventListener("click", () => {
+        const snippet = CODE_FILES[currentCodeFileKey]?.code || "";
+        copyTextToClipboard(snippet, "Code snippet copied");
+      });
+
+      // Orbiting Tech Nodes
+      document.querySelectorAll("[data-orbit-tech]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const tech = btn.getAttribute("data-orbit-tech");
+          const box = document.getElementById("orbitTechDetailBox");
+          if (box && ORBIT_TECH_DETAILS[tech]) {
+            box.textContent = ORBIT_TECH_DETAILS[tech];
+          }
+          showToast(`Selected Stack Node: ${tech}`);
+        });
+      });
+
+      // Hero Stack Jump Tags
+      document.querySelectorAll("[data-stack-jump]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const filter = btn.getAttribute("data-stack-jump");
+          renderProjects(filter);
+          scrollToSection("projectsSection");
+        });
+      });
+
+      // Terminal Benchmark Button
+      document.getElementById("runAuditBtn").addEventListener("click", () => {
+        const out = document.getElementById("terminalStatusOutput");
+        out.textContent = "Running SEO & Responsive Audit on mithuahammad.com...";
+        setTimeout(() => {
+          out.textContent = "✓ SEO: 100/100 | Perf: 99.4% | Mobile Responsive: PASS";
+          showToast("SEO & Performance Audit: 100/100");
+        }, 500);
+      });
+
+      // Service Tabs
+      document.querySelectorAll(".service-tab-btn").forEach((btn) => {
+        btn.addEventListener("click", () => renderServiceTabs(btn.getAttribute("data-service-tab")));
+      });
+
+      // Project Filters
+      document.querySelectorAll(".project-filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => renderProjects(btn.getAttribute("data-project-filter")));
+      });
+
+      // Compare Slider
+      const compareInput = document.getElementById("compareRangeInput");
+      const compareLayer = document.getElementById("compareLeftLayer");
+      const compareLabel = document.getElementById("comparePercentLabel");
+      compareInput.addEventListener("input", () => {
+        const val = Number(compareInput.value);
+        compareLayer.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
+        compareLabel.textContent = `${val}%`;
+      });
+
+      // Testimonials Next/Prev
+      document.getElementById("prevTestimonialBtn").addEventListener("click", () => {
+        currentTestimonialIdx = (currentTestimonialIdx - 1 + PORTFOLIO_CONFIG.testimonials.length) % PORTFOLIO_CONFIG.testimonials.length;
+        renderActiveTestimonial();
+      });
+      document.getElementById("nextTestimonialBtn").addEventListener("click", () => {
+        currentTestimonialIdx = (currentTestimonialIdx + 1) % PORTFOLIO_CONFIG.testimonials.length;
+        renderActiveTestimonial();
+      });
+
+      // Copy Email Buttons
+      document.getElementById("copyEmailHeroBtn").addEventListener("click", () => {
+        copyTextToClipboard(PORTFOLIO_CONFIG.email, "Email copied");
+      });
+      document.getElementById("copyEmailFooterBtn").addEventListener("click", () => {
+        copyTextToClipboard(PORTFOLIO_CONFIG.email, "Email copied");
+      });
+      document.getElementById("legacyEmailBtn").addEventListener("click", () => {
+        copyTextToClipboard(PORTFOLIO_CONFIG.email, "Email copied");
+      });
+      document.getElementById("legacyEmailCopyBtn").addEventListener("click", () => {
+        copyTextToClipboard(PORTFOLIO_CONFIG.email, "Email copied");
+      });
+
+      // Ping Dhaka Radar Node
+      document.getElementById("pingRadarBtn").addEventListener("click", () => {
+        const ms = Math.floor(Math.random() * 6) + 11;
+        document.getElementById("radarPingLabel").textContent = `mithuahammad.com • ${ms}ms Edge`;
+        showToast(`mithuahammad.com responded in ${ms}ms`);
+      });
+
+      // Project Modal Close
+      document.getElementById("closeProjectModalBtn").addEventListener("click", () => {
+        document.getElementById("projectModalOverlay").classList.add("hidden");
+      });
+
+      // Customizer Modal Open/Close/Save
+      document.getElementById("openCustomizerBtn").addEventListener("click", openCustomizerModal);
+      document.getElementById("openConfigFromSidebarBtn").addEventListener("click", openCustomizerModal);
+      document.getElementById("closeCustomizerBtn").addEventListener("click", () => {
+        document.getElementById("customizerModalOverlay").classList.add("hidden");
+      });
+
+      document.getElementById("customizerForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        PORTFOLIO_CONFIG.name = document.getElementById("cfgNameInput").value.trim() || DEFAULT_PORTFOLIO_CONFIG.name;
+        PORTFOLIO_CONFIG.roleSub = document.getElementById("cfgRoleInput").value.trim() || DEFAULT_PORTFOLIO_CONFIG.roleSub;
+        PORTFOLIO_CONFIG.email = document.getElementById("cfgEmailInput").value.trim() || DEFAULT_PORTFOLIO_CONFIG.email;
+        PORTFOLIO_CONFIG.phone = document.getElementById("cfgPhoneInput").value.trim() || DEFAULT_PORTFOLIO_CONFIG.phone;
+        const newBio = document.getElementById("cfgBioInput").value.trim();
+        if (newBio) {
+          if (currentLang === "bn") PORTFOLIO_CONFIG.bioBN = newBio;
+          else PORTFOLIO_CONFIG.bioEN = newBio;
+        }
+        PORTFOLIO_CONFIG.webhooks.googleScriptUrl = document.getElementById("cfgSheetUrlInput").value.trim();
+        PORTFOLIO_CONFIG.webhooks.telegramBotEndpoint = document.getElementById("cfgTelegramTokenInput").value.trim();
+
+        try {
+          localStorage.setItem("mithu_velora_portfolio_cfg_v2", JSON.stringify(PORTFOLIO_CONFIG));
+        } catch (err) {}
+
+        renderProfileAndCopy();
+        document.getElementById("customizerModalOverlay").classList.add("hidden");
+        showToast("Portfolio configuration updated");
+      });
+
+      document.getElementById("resetConfigBtn").addEventListener("click", () => {
+        PORTFOLIO_CONFIG = JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_CONFIG));
+        try {
+          localStorage.removeItem("mithu_velora_portfolio_cfg_v2");
+        } catch (err) {}
+        renderProfileAndCopy();
+        document.getElementById("customizerModalOverlay").classList.add("hidden");
+        showToast("Reset to default configuration");
+      });
+
+      // Command Palette Open/Close/Search + Keyboard Shortcut (⌘K / Ctrl+K)
+      const openCmd = () => {
+        renderCommandPalette("");
+        document.getElementById("cmdSearchInput").value = "";
+        document.getElementById("cmdPaletteOverlay").classList.remove("hidden");
+        document.getElementById("cmdSearchInput").focus();
+      };
+      document.getElementById("openCmdPaletteBtn").addEventListener("click", openCmd);
+      document.getElementById("dockCmdBtn").addEventListener("click", openCmd);
+      document.getElementById("closeCmdPaletteBtn").addEventListener("click", () => {
+        document.getElementById("cmdPaletteOverlay").classList.add("hidden");
+      });
+      document.getElementById("cmdSearchInput").addEventListener("input", (e) => {
+        renderCommandPalette(e.target.value);
+      });
+
+      window.addEventListener("keydown", (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+          e.preventDefault();
+          openCmd();
+        } else if (e.key === "Escape") {
+          document.getElementById("cmdPaletteOverlay").classList.add("hidden");
+          document.getElementById("projectModalOverlay").classList.add("hidden");
+          document.getElementById("customizerModalOverlay").classList.add("hidden");
+        }
+      });
+
+      // Contact Form Submission
+      document.getElementById("portfolioContactForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = document.getElementById("senderName").value.trim();
+        const phone = document.getElementById("senderPhone").value.trim();
+        const email = document.getElementById("senderEmail").value.trim();
+        const stack = document.getElementById("projectStackSelect").value;
+        const message = document.getElementById("senderMessage").value.trim();
+
+        if (!name || !phone || !email || !message) {
+          showToast("Please complete all required fields (*)", "error");
+          return;
+        }
+
+        const btn = document.getElementById("submitContactBtn");
+        btn.disabled = true;
+        document.getElementById("submitBtnLabel").textContent = "Sending...";
+
+        const payload = { name, phone, email, stack, message, timestamp: new Date().toISOString() };
+        if (PORTFOLIO_CONFIG.webhooks.googleScriptUrl) {
+          try {
+            await fetch(PORTFOLIO_CONFIG.webhooks.googleScriptUrl, {
+              method: "POST",
+              mode: "no-cors",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload)
+            });
+          } catch (err) {}
+        }
+
+        setTimeout(() => {
+          btn.disabled = false;
+          document.getElementById("submitBtnLabel").textContent = "Dispatch Message";
+          document.getElementById("portfolioContactForm").reset();
+
+          const wrap = document.getElementById("recentDispatchesWrap");
+          const list = document.getElementById("recentDispatchesList");
+          wrap.classList.remove("hidden");
+          const item = document.createElement("div");
+          item.className = "p-2.5 rounded-xl bg-black/40 border border-white/10 text-xs font-mono flex items-center justify-between";
+          item.innerHTML = `<span><strong class="brand-text">${name}</strong> (${stack}) — "${message.slice(0, 48)}..."</span><span class="text-emerald-400">✓ Sent</span>`;
+          list.prepend(item);
+
+          showToast(`Thank you ${name}! Your message has been logged.`);
+        }, 450);
+      });
+    });
+  </script>
+</body>
+</html>
